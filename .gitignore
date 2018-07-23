@@ -102,3 +102,20 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+**/**/*.secrets.yml
+**/*.secrets.yml
+*.secrets.yml
+
+**/**/secrets.yml
+**/secrets.yml
+secrets.yml
+
+**/datasets/**
+**/datasets/*
+datasets/**
+datasets/*
+
+.ipynb_*/**
+.ipynb_*/*
+.ipynb_*
