@@ -15,18 +15,25 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
 1. Remover o elo (link) do python2 para tornar o python3 como default
 
     ```bash
-      # Todos Sistemas Operacionais
+      # MacOS X
       $ nano ~/.bash_profile
+      
+      # Ubuntu
+      $ nano ~/.bashrc
     ```
     
     ```.bash_profile
       # bash_profile
       
-      # alias
+      # MacOS X
       pip=pip3
       python=python3
 
       [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+      
+      # Ubuntu
+      alias pip=pip3
+      alias python=python3
      ```
 
 1. Instalar o jupyter notebook via gerenciador de pacote do Python3 (pip3)
