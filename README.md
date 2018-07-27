@@ -16,6 +16,13 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
       $ pip3 install jupyter notebook
     ```
 
+1. Instalando a dependencia da computação em núvem (floydhub):
+
+    ```bash
+      # Todos Sistemas Operacionais
+      $ sudo pip3 install -U floyd-cli
+    ```   
+
 1. Instalar o MiniConda:
 
     1. [(Todos)Python 3.6](https://conda.io/miniconda.html)
