@@ -7,20 +7,40 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
     ```bash
       # MacOS X
       $ brew install python3
+      
+      # Linux
+      $ apt-get install python3
     ```
+    
+1. Remover o elo (link) do python2 para tornar o python3 como default
+
+    ```bash
+      # Todos Sistemas Operacionais
+      $ nano ~/.bash_profile
+    ```
+    
+    ```.bash_profile
+      # bash_profile
+      
+      # alias
+      pip=pip3
+      python=python3
+
+      [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+     ```
 
 1. Instalar o jupyter notebook via gerenciador de pacote do Python3 (pip3)
 
     ```bash
       # Todos Sistemas Operacionais
-      $ pip3 install jupyter notebook
+      $ pip install jupyter notebook
     ```
 
 1. Instalando a dependencia da computação em núvem (floydhub):
 
     ```bash
       # Todos Sistemas Operacionais
-      $ sudo pip3 install -U floyd-cli
+      $ sudo pip install -U floyd-cli
     ```   
 
 1. Instalar o MiniConda:
