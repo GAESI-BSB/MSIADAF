@@ -51,3 +51,5 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
       # Todos Sistemas Operacionais
       $ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.9.0-py3-none-any.whl
     ```
+
+__OBSERVAÇÃO: Não atualize (upgrade) o pip! O tensorflow 1.9 é compatível com o pip instalado neste processo!__
