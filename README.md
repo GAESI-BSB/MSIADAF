@@ -25,16 +25,16 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
     ```.bash_profile
       # bash_profile
       
-      # MacOS X
-      pip=pip3
-      python=python3
-
-      [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-      
-      # Ubuntu
+      # aliases
       alias pip=pip3
       alias python=python3
+
+      [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
      ```
+     
+    ```bash
+      $ source ~/.bash_profile
+    ```     
 
 1. Instalar o jupyter notebook via gerenciador de pacote do Python3 (pip3)
 
