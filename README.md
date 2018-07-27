@@ -47,7 +47,7 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
 
     ```bash
       # Todos Sistemas Operacionais
-      $ sudo pip install -U floyd-cli
+      $ pip install -U floyd-cli
     ```   
 
 1. Instalar o MiniConda:
