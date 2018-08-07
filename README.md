@@ -91,3 +91,10 @@ __OBSERVAÇÃO: Não atualize (upgrade) o pip! O tensorflow 1.9 é compatível c
     ```bash
      $ sudo pip install --force-reinstall pip==10.0.1
     ```
+    
+__Se aparecer stacktrace no import do tensorflow no arg async significa que existem 2 pythons interpreters rodando o tensorflow e você deve executar um uninstall do tensorflow fora do env conda__:
+
+```base
+ $ conda deactivate
+ $ pip uninstall tensorflow
+```
