@@ -1,0 +1,13 @@
+# Base parts of URL for Decorator
+protocol:             http
+domain:               pga4.cna.org.br
+path:                 sispga_ws
+extension:            WsService?wsdl
+
+# PGA Web Services
+services:
+  wsdl_farm:          PropriedadeRural
+  wsdl_exploration:   ExploracaoPecuaria
+
+# PGA Secrets (edit it on production)
+sys_key:              dev_env
