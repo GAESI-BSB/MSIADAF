@@ -1,0 +1,1359 @@
+<html>
+<head>
+<title>Novidades no TabWin 3.0 a 3.6</title>
+<style>
+.novo {background-color: #DDDDDD;}
+   </style>
+
+</head>
+<body style="margin-left:5%; margin-right:5%">
+
+<H2><CENTER>Novidades no TabWin 3.0 a 3.6</CENTER></H2>
+
+<OL>
+<LI><H3>Tabwin+R</H3></LI>
+
+<P><UL>
+<LI><A HREF="#rintro">Introdução aos esquemas de análise com R</A></LI>
+<LI><A HREF="#rusar">Como usar os esquemas de análise</A></LI>
+<LI><A HREF="#rcriar">Como criar esquemas de análise</A></LI>
+</UL></P>
+
+<LI><H3>TabWin+SQL</H3></LI>
+
+<P><UL>
+<LI><A HREF="#sqlintro">Introdução à interface com bancos de dados relacionais</A></LI>
+<LI><A HREF="#sqlcriar">Como criar consultas SQL</A></LI>
+<LI><A HREF="#sqldatamart">Quando criar uma visão local da base de dados.</A></LI>
+<LI><A HREF="#sqltab">Ativando consultas a partir da janela de tabulação</A></LI>
+<LI><A HREF="#sqlbde">É preciso instalar o BDE?</A></LI>
+</UL></P>
+
+<LI><A HREF="#import">Importando dados de arquivos externos (DBF,CSV,SDF,XML)</A></LI>
+<LI><A HREF="#cartog">Importação de bases cartográficas municipais</A></LI>
+<LI><A HREF="#fluxo">Análise de fluxos de atendimento</A></LI>
+<LI><A HREF="#wine">Executando o TabWin sob Wine Linux</A></LI>
+</OL> 
+
+<!--<p><span class="novo">Nota: Textos assinalados referem-se à versão 3.5</span></p>-->
+
+<HR>
+<H2><CENTER><A NAME="rintro">TabWin+R</A></CENTER></H2>
+
+<P><B>Introdução</B></P>
+
+<P>Tabwin+R é uma interface aberta entre o Tabwin e o software R que
+permite adicionar ao Tabwin uma grande capacidade de análise de dados
+de forma fácil e transparente para os usuários das informações do
+SUS.</P>
+
+<P>Como o uso de técnicas de análise estatística não estava implementada
+no programa, os pesquisadores eram obrigados a exportar os dados e
+indicadores obtidos pelo TabWin para outras ferramentas de análise. A
+troca dos dados de uma ferramenta para outra, embora simples para o
+usuário experiente, é uma barreira para quem faz pela primeira vez.
+Ainda mais, vários desses programas, além de serem produtos
+comerciais, são de difícil aprendizagem e não dispõem de versão em
+português o que é um desestímulo a disseminação do uso das técnicas
+estatísticas.</P>
+
+<P>A interface aberta implementada no Tabwin e a flexibilidade do R
+permitem que, além dos esquemas de análise distribuídos pelo DATASUS,
+a própria comunidade de usuários, na academia e nos serviços, possa
+criar novos esquemas de análise e acrescentá-los ao acervo disponível.</P> 
+
+<P><B>O que é o R.</B></P>
+
+<P>R é uma linguagem e um ambiente para computação estatística e
+gráficos. É um projeto GNU que é similar à linguagem do ambiente S,
+que foi desenvolvido no Bell Laboratories (Antiga AT&T, agora Lucent 
+Technologies) por John Chambers e colegas.</P>
+
+<P>R fornece uma ampla variedade de técnicas estatísticas (linear, não
+linear, testes estatísticos clássicos, análise de séries temporais,
+classificação, "clustering", ...) e gráficas, e é altamente
+extensível.</P>
+
+<P>Uma dos pontos fortes do R é a facilidade com que gráficos com
+qualidade de publicação bem desenhados podem ser produzidos, incluindo
+símbolos matemáticos e fórmulas aonde necessárias.</P>
+
+<P>R é distribuído como Software Livre, nos termos da Licença Pública
+Geral GNU da Free Software Foundation como código fonte.  R compila e
+executa sob uma ampla variedade de plataformas UNIX e similares
+(incluindo Linux e FreeBSD) além de Windows 9x/NT/2000 e MacOS.</P>
+
+<HR>
+
+<P><H3><A NAME="rusar"></A>Como usar os esquemas de análise</H3></P>
+
+<P>Para usar os esquemas de análise do Tabwin+R você não precisa conhecer
+nada da linguagem R, mas precisa instalar os executáveis do R em seu
+computador.</P>
+
+<P><B>De onde baixar o R</B></P>
+
+<P>O página oficial do R é 
+<A HREF="http://www.r-project.org/" target="_blank">http://www.r-project.org/</A>
+onde você pode obter informações sobre o R e baixar os executáveis para Windows.
+Vá a área de downloads, entre no CRAN, e procure um sítio perto de você.
+(existem espelhos no Brasil).</P>
+
+<P>Clique em "Windows(95 and later)",  na página seguinte clique em
+"base" e escolha o programa de setup para baixar. No momento de
+geração deste documento se chamava rw1091.exe. (aproximadamente 21
+megabytes). Outra alternativa, para quem tem conexão lenta, é clicar
+em "Mini"e baixar o miniR que são 9 arquivos de até 1.44 Megabytes. </P> 
+
+<P><B>Instalando o R em Windows.</B></P>
+
+<P>Após baixar o arquivo rw1091.exe em um diretório temporário basta
+executá-lo que o processo de instalação irá conduzi-lo até o fim.</P>
+
+<P>Importante: Em um dos diálogos de instalação você pode confirmar se
+quer registrar a extensão .Rdata, que é o padrão.  Não desmarque o
+checkbox porquê é através do registro desta extensão no Registry do
+Windows que o Tabwin vai descobrir se o R está instalado e em que
+diretório.</P>
+
+<P><B>Baixando os esquemas do site do DATASUS.</B></P>
+
+<P>Você pode conhecer os Esquemas de Análise já existentes no site do DATASUS na 
+página Internet abaixo: </P> 
+
+<P><A HREF="http://tabnet.datasus.gov.br/cgi/rx/listarx.htm">Biblioteca de 
+Esquemas de Análise com R</A></P>
+
+<P>Nessa página além de examinar a biblioteca disponível no DATASUS, você baixa 
+também um arquivo zip que contém os fontes de todos os arquivos RX que você pode 
+expandir no diretório do TabWin ou em um diretório de sua conveniência.</P> 
+
+Voce também pode obter informações sobre o uso do TabWin+R e da 
+Biblioteca Esquemas de Análise visitando o <A 
+HREF="http://forum.datasus.gov.br/viewforum.php?f=51" target="_blank">fórum de análise 
+de informações em saúde</A>, parte do fórum do DATASUS que é voltado 
+para o uso destes programas.  
+
+<P><B>Ativando os esquemas de análise.</B></P>
+
+<P>Se durante a iniciação do Tabwin for detectado que o R está instalado
+nessa máquina, o menu tradicional de estatística será substituído por
+uma nova opção denominada "Análise com R".  Nesse caso, para usar os
+esquemas de análise basta, com um quadro aberto no Tabwin, clicar na
+opção de menu principal "Análise com R" ou então simplesmente teclar
+‘Alt+R’.</P>
+
+<P>Isso vai resultar na abertura de uma nova janela do Tabwin que tem, em sua 
+parte superior, os títulos de todos os esquemas de análise disponíveis no 
+diretório inicial. Você pode escolher outro diretório clicando no botão 
+"Biblioteca"</P>
+
+<P>Ao percorrer cada umas das opções desta lista, aparecerá, na parte
+inferior da janela, a descrição detalhada do esquema onde você pode
+saber quando se aplica, quais as suas restrições e um pouco de teoria
+e referências para você estudar o assunto em mais detalhe. Ao mesmo
+tempo, para cada esquema de análise, você vai sendo informado do autor
+do esquema, do seu e-mail e qual a versão do esquema instalado.</P>
+
+<P>Para executar o esquema selecionado basta clicar no botão OK ou dar um
+duplo clique na lista de esquemas. Vai aparecer por um instante uma
+janela DOS que será substituída pela janela de informações do TabWin
+na qual você verá os resultados da análise procedida.</P>
+
+<P>Se, eventualmente a análise produzir gráficos os mesmos vão aparecer
+em uma janela própria a partir da qual podem ser visualizados,
+impressos, salvos, copiados para o "clipboard" etc... </P>
+
+<P>Se um esquema produzir mais de uma imagem gráfica, você verá, na barra
+de ferramentas da janela gráfica, um botão com os números dos gráficos
+gerados. Para visualizá-los basta clicar no número correspondente.</P> 
+
+<P><B>Se algo der errado? q()</B></P>
+
+<P>A janela DOS que aparece rapidamente com o título "Rterm" indica que o
+R está interpretando o esquema de análise que você ativou.
+Eventualmente, se for encontrado um erro que não permita concluir o
+esquema normalmente, uma mensagem de erro vai surgir nesta janela e o
+programa vai aguardar que você tome conhecimento da mesma e feche
+manualmente a janela.</P>
+
+<P>Para fechar a janela que está executando uma sessão do R você deve
+teclar q(),  que é a função do R para encerrar a sessão, e teclar
+Enter.</P>   
+
+<P><B>Onde colocar os esquemas de análise.</B></P>
+
+<P>Junto com o Tabwin+R você recebeu um conjunto de arquivos com a
+extensão RX. Cada um destes arquivos contém um esquema de análise de
+dados implementado em R. Estes arquivos, na versão atual do Tabwin,
+estão sendo instalados no mesmo diretório onde fica o tabwin.exe. 
+Entretanto, qualquer diretório com pelo menos um arquivo com extensão
+RX é considerado uma biblioteca de esquemas de análise.  Se você usar
+o botão "Biblioteca" um diálogo de seleção de arquivo vai abrir e você
+pode ir para qualquer diretório que contenha esquemas de análise e
+escolher um arquivo que a biblioteca será trocada. A caminho da última
+biblioteca selecionada será gravado no arquivo "tabwin.ini".</P>
+
+<P><B>Abrindo o R em janela separada</B></P>
+
+<P>Para usuários experientes no R o Tabwin oferece uma alternativa para
+ativar o programa carregando automaticamente no mesmo os dados que
+você está usando.</P>
+
+<P>Basta clicar no botão que tem um R azul na barra de ferramentas ou,
+via menu, em "Arquivo/Abre R em janela separada".</P>
+
+<P>Neste caso, além dos objetos "tabela","titulo","subtitulo","rodape" 
+e "nomemapa", também o objeto "dirtabwin", que contém o diretório onde 
+está o executável do TabWin é criado no ambiente do R.</P>
+
+<P>Além disso o arquivo "menu.r" existente no diretório do TabWin, 
+é imediatamente executado e cria o menu "TabWin" na barra de menus 
+do R interativo. Este menu inclue funções para facilitar e 
+exportação e importação de dados com o TabWin</P> 
+
+<P>Após a ativação do R não há mais interação entre os dois programas e 
+cada sessão fica independente.</P>
+
+<HR>
+
+<H3><A NAME="rcriar"></A>Como criar esquemas de análise</H3>
+
+<P>Para criar esquemas de análise você precisa conhecer a linguagem do R.
+(Ensinar o R não está no objetivo deste documento). O página oficial do R 
+contém vários documentos para quem quer aprender o R.  Além disso, podemos
+encontrar na Internet, alguns tutoriais em Português cujos links estão
+abaixo:</P>
+
+<P><A HREF="http://www.est.ufpr.br/Rtutorial/" target="_blank">Tutorial de R no Departamento de Estatística da UFPR</A></P>
+
+<P><A HREF="http://cran.r-project.org/doc/contrib/Beasley-BioestatisticaUsandoR.pdf">"Biostatística usando R" por Colin Robert Beasley da UFPA (em PDF)</A></P>
+
+<P><A HREF="http://cran.r-project.org/doc/contrib/Beasley-BioestatisticaUsandoRDados.zip">Dados para acompanhar o tutorial do professor Beasley</A></P>
+
+<hr>
+
+<P>Se você já conhece o R este documento vai explicar como criar os seus
+próprios esquemas de análise dentro do TabWin.</P>
+
+
+<P><B>Como funciona a comunicação com o R</B></P>
+
+<P>A comunicação com o R se dá de forma muito simples. Inicialmente, após
+a seleção de um esquema, o Tabwin cria, no diretório corrente, dois
+arquivos: um, de nome ".Rprofile", com o programa em R para executar o
+esquema, e outro, de nome "tabwin.in" com o conteúdo do quadro no formato
+próprio para ser carregado pelo R.</P>
+
+<P>Após a criação dos arquivos, o Tabwin cria um processo no Windows que
+executa o R no diretório corrente e fica aguardando que o programa em
+R chegue ao seu término.</P>
+
+<P>Após o termino do processo o Tabwin verifica se foram criados e
+carrega, nas janelas próprias, os arquivos seguintes:</P>
+
+<P><UL><LI>"script.out" com os textos resultantes da análise;</LI>
+ <LI>"tabwin.out" para substituir o quadro atual;</LI>
+ <LI>"tabwin??.wmf" com os gráficos criados.</LI></UL></P>
+
+<P>Estes arquivos permanecem disponíveis até a execução de outro esquema
+de análise e podem ser consultados com editores de texto, a exceção dos
+arquivos "tabwin??.wmf" que devem ser abertos com a opção "Ver Windows
+Metafiles" disponível no menu "Arquivo".</P>
+
+<P><B>O arquivo RX</B></P>
+
+<P>Os esquemas de análise ficam armazenados em um arquivo com a extensão
+RX que contém o programa em R e as demais informações necessárias a
+interface com o Tabwin. Veja abaixo em exemplo de um arquivo RX:</P>
+
+<PRE>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;Rscript&gt;
+&lt;titulo&gt;Regressão Linear&lt;/titulo&gt;
+&lt;descricao&gt;
+....
+Descrição e notas técnicas sobre o esquema de análise.
+....
+&lt;/descricao&gt;
+&lt;autor&gt;Oswaldo G Cruz&lt;/autor&gt;
+&lt;email&gt;oswaldo@fiocruz.br&lt;/email&gt;
+&lt;versao&gt;1.0&lt;/versao&gt;
+&lt;parametro&gt;Entre com a formula a ser usada (ex: x ~ y+z) &lt;/parametro&gt;
+&lt;script&gt;
+grafico.tabwin()
+reg &lt;- lm(as.formula(parametro),data=tabela)
+summary(reg)
+par(mfrow = c(2,2))
+plot(reg)
+tabela$resíduos &lt;- reg$residuals
+carrega.tabwin(tabela)
+&lt;/script&gt;
+&lt;/Rscript&gt;
+</PRE>
+
+
+<P>Como vemos, um arquivo RX é um documento XML que contém o programa em
+R e outras informações para uso do Tabwin, contidas em marcadores (tags)
+específicos que devem aparecer no arquivo exatamente como estão
+escritas aqui.</P>
+
+<P>Embora você possa criar, alterar e salvar os arquivos .RX usando o
+editor de texto de sua preferência, o TabWin tem uma janela de edição
+própria que pode ser ativada pelo menu "Arquivo/Criar esquema de
+análise" ou teclando "Ctrl+R" e que, além de permitir a edição do
+esquema permite também a execução do mesmo.</P>
+
+<P><B>Descrição dos marcadores</B></P>
+
+<UL>
+<LI><B>&lt;Rscript&gt;</B> Este marcador obrigatório é a raiz do documento e contem
+todos os outros.</LI>
+
+<LI><B>&lt;titulo&gt;</B> Este marcador obrigatório contem o título do documento como
+vai aparecer na lista de esquemas disponíveis.</LI>
+
+<LI><B>&lt;descricao&gt;</B> Este marcador opcional contém a documentação do esquema de
+análise que vai ser mostrada ao usuário. Aqui deve ser colocada a
+finalidade do mesmo, suas restrições de uso, fundamentos teóricos e
+referências bibliográficas,</LI>
+
+<LI><B>&lt;autor&gt;</B>Marcador opcional com o nome do autor do esquema.</LI>
+
+<LI><B>&lt;email&gt;</B> Marcador opcional que contém o e-mail do autor.</LI>
+
+<LI><B>&lt;versao&gt;</B> Marcador opcional que contém a versão do esquema.</LI>
+
+<LI><B>&lt;parametro&gt;</B> Marcador opcional utilizado quando é necessário pedir ao
+usuário um parâmetro para a execução do esquema. Se este marcador
+estiver presente no esquema, o Tabwin, antes de ativar o R, vai abrir
+um diálogo com o usuário, com o texto contido neste marcador, pedindo
+que o mesmo digite o parâmetro. Neste caso o Tabwin vai criar, no
+ambiente do R, um objeto, de nome "parametro", contendo o texto
+digitado pelo usuário.</LI>
+
+<LI><B>&lt;parametro2&gt</B>;Análogo ao anterior. Usado quando for necessário um
+segundo parâmetro que terá o nome "parametro2".</LI>
+
+<LI><B>&lt;colsel&gt;</B> Marcador opcional utilizado quando é necessário pedir ao
+usuário que selecione uma ou mais colunas. Se este marcador estiver
+presente no esquema, o Tabwin, antes de ativar o R, vai abrir um
+diálogo com o usuário, com o texto contido neste marcador, pedindo que
+o mesmo marque as colunas que serão utilizadas. Neste caso o Tabwin
+vai criar, no ambiente do R, um vetor, de nome "colsel", contendo a
+lista das colunas selecionas.</LI>
+
+<LI><B>&lt;colsel2&gt;</B> Análogo ao anterior. Usado quando for necessária uma segunda
+seleção de colunas que terá o nome "colsel2".</LI>
+
+<LI><B>&lt;script&gt;</B> Marcador obrigatório que contém o código R que executa o
+esquema de análise. Este programa atua sobre os objetos criados pelo
+Tabwin no ambiente do R e cria saída de texto, gráficos e, se
+necessário, carrega outro quadro de volta.</LI>
+
+<LI><B>&lt;exemplo&gt;</B> Marcador opcional que contem dados de exemplo para 
+uso com o esquema de análise na forma de um arquivo .tab. Os dados de exemplo 
+ajudam o compreender a técnica estatística utilizada e o formato em que os dados 
+devem estar organizados no quadro do TabWin.</LI>
+
+</UL>
+
+
+<P><B>O arquivo .Rprofile</B></P>
+
+<P>Antes de ativar o R o Tabwin cria, no diretório corrente, um arquivo
+com o nome de .Rprofile que o R executa automaticamente ao iniciar.
+Nesse arquivo o Tabwin cria vários objetos, inclui o texto do script e
+acrescenta, no final, a função q() para encerrar o processamento.</P>
+
+<P>Abaixo um exemplo de arquivo .Rprofile criado a partir do arquivo RX
+acima, no qual o conteúdo do script aparece em vermelho para separar
+do que foi criado pelo Tabwin:</P>
+
+<PRE>sink("script.out")
+titulo="TabWin:C:/tmp/tabwin/AIDS91.TAB"
+subtitulo=""
+rodape="    "
+tabela = read.table("tabwin.in",check.names=FALSE)
+parametro="taxa96 ~ pop96 + taxa91 + Diferença"
+grafico.tabwin = function(fundo="white", largura=7){
+  library(graphics); 
+  win.metafile("tabwin%02d.wmf", width=largura, height=largura);
+  par(bg=fundo)
+}
+carrega.tabwin = function(tabela) {
+  zz = file("tabwin.out","w");
+  cat("Titulo1=",titulo,"\n",file=zz);
+  cat("Titulo2=",subtitulo,"\n",file=zz);
+  cat("Rodape=",rodape,"\n",file=zz);
+  cat("Nomemapa=",nomemapa,"\n",file=zz);
+  close(zz);
+  write.table(tabela,"tabwin.out",sep=",", col.names=NA, append=TRUE)
+}
+<font color="red">grafico.tabwin()
+reg <- lm(as.formula(parametro),data=tabela)
+summary(reg)
+par(mfrow = c(2,2))
+plot(reg)
+tabela$residuos <- reg$residuals
+carrega.tabwin(tabela)</font>
+
+q()</PRE>
+
+
+<P><B>Os objetos criados pelo Tabwin no ambiente do R</B></P>
+
+<P>Os seguintes objetos são criados sempre no ambiente do R.</P>
+
+<UL>
+<LI><B>tabela</B> : Data frame contendo o quadro do TabWin, com os dados, nomes
+de linha e nomes de colunas. Os nomes das colunas não são
+transformados automaticamente em nomes válidos para o R.
+(check.names=FALSE)</LI>
+
+<LI><B>titulo</B> : String contendo o Cabeçalho1 do quadro do Tabwin.</LI>
+
+<LI><B>subtitulo</B> : String contendo o Cabeçalho2 do quadro do Tabwin.</LI>
+
+<LI><B>rodape</B> : String contendo o Rodapé do quadro do Tabwin.</LI>
+
+<LI><B>nomemapa</B>: String contendo o nome do arquivo mapa associado a tabela do
+TabWin com o path convertido para o padrão do R.</LI>
+
+<LI><B>grafico.tabwin()</B> : Função para abrir a janela de gráfico a ser
+capturada pelo Tabwin.  O programa em R deve chamar esta função antes
+de usar qualquer comando que escreva um gráfico.</LI>
+
+<LI><B>carrega.tabwin(x)</B> : Função que cria um arquivo, contendo o data frame
+passado como argumento,  para ser aberto pelo Tabwin em substituição
+ao quadro atual. Esta função devolve também ao Tabwin "titulo", "subtitulo"
+ e "rodape".</LI>
+</UL>
+
+<P>Os seguintes objetos são criados no ambiente do R somente quando o
+marcador correspondente estiver presente no arquivo RX.</P>
+
+<UL>
+<LI><B>parametro</B>: String contendo o parâmetro passado pelo usuário;</LI>
+
+<LI><B>parametro2</B>: String contendo o parâmetro passado pelo usuário;</LI>
+
+<LI><B>colsel</B>: Vetor contendo a lista das colunas selecionadas;</LI>
+
+<LI><B>colsel2</B>: Vetor contendo a lista das colunas selecionadas.</LI>
+</UL>
+
+<P><B>A utilização do autoexec.r</B></P>
+
+<P>Como o Tabwin recria a cada esquema de análise o arquivo .Rprofile ,
+cujo papel era de inicialização geral no R, foi implementado o
+processo que executa inicialmente um arquivo de nome "autoexec.r", se
+o mesmo existir no diretório do Tabwin.</P>
+
+<P>Desta forma, o usuário avançado do R pode fazer a inicialização geral
+utilizando o Rprofile.site a ser criado no "diretório_do_R/etc" ou
+utilizando o autoexec.r no diretório do TabWin.</P>
+
+<HR>
+
+<H2><CENTER><A NAME="sqlintro"></A>TabWin + SQL</CENTER></H2>
+
+
+<H3>Introdução:</H3>
+
+<P>O TabWin + SQL é uma interface entre o TabWin e os Bancos de Dados relacionais 
+que usam a linguagem SQL para manipulação e recuperação de Informações e tem por 
+objetivo o uso do programa para suportar os usuários dos novos sistemas 
+distribuídos pelo DATASUS e que se baseiam em Bancos de Dados Relacionais.</P>
+
+<P>Como a conexão é feita através do BDE (Borland Database Engine) é 
+possível recuperar informações de todos os gerenciadores de banco de 
+dados suportados pelo mesmo, tanto de forma nativa quanto via ODBC. 
+Isto inclue não apenas dBase, Paradox e FoxPro mas também MySQL, 
+PostGreSQL, FireBird, SQLite, Access, ORACLE, Interbase, SQLServer, 
+SyBase, Informix, DB/2 e todos os bancos de dados que se conectam via 
+ODBC. </P>
+
+<P>Esta interface é ativada no início de execução do TabWin sempre que for 
+detectado que o BDE  está instalado na máquina. Neste caso ficam visíveis as 
+opções de menu "Arquivo/Consulta SQL" e aparece na barra de ferramentas um botão 
+com um "Q" vermelho no centro. Clicar em qualquer um deles vai ativar a janela 
+"Consulta SQL".</P>
+
+<P>O programa permite que consultas SQL sejam elaboradas pelo DATASUS e 
+distribuídas aos usuários, juntamente com as aplicações que coletam as 
+informações, permitindo que pessoas que não tenham conhecimento de SQL possam 
+executar as mesmas em suas máquinas locais. Neste caso o usuário vê uma lista 
+das consultas já cadastradas e pode executá-las simplesmente selecionando a 
+consulta que quer e clicando no botão "Executar" ou "Salvar DBF".</P>
+<P>
+Se a opção for por "Executar" a consulta será feita e o resultado vai aparecer 
+em um quadro normal do TabWin no qual os dados podem ser usados diretamente como 
+qualquer resultado de tabulação, gerando gráficos, mapas e podendo ser 
+integrados a outras informações para a geração de indicadores.</P>
+
+<P>Se a opção for pelo botão "Salvar DBF" o resultado da consulta vai 
+ser salva em um arquivo tipo dBase que poderá ser usado mais tarde 
+como entrada em uma tabulação tradicional através de arquivos DEF e 
+CNVs ou mesmo o uso do SQL.</P>
+
+<P>A esse modo de operar, no qual a complexidade do SQL fica escondida do usuário, 
+chamamos de "Modo usuário".</P>
+
+<P>Além desse, existe um modo de operar que chamamos de "Modo Programador" no qual se 
+permite que usuários que já conheçam a linguagem SQL possam criar consultas 
+localmente usando as informações disponíveis no BDE sobre os bancos de dados já 
+instalados.</P>
+
+<H3><A NAME="sqlcriar">Como criar consultas SQL</A></H3>
+
+<P>Para criar novas consultas em SQL é necessário ter noções da linguagem SQL e 
+clicar no botão "Modo Programador" para fazer o programa entrar no modo 
+correspondente e mostrar, na mesma janela, várias informações e botões
+novos, como vemos na imagem abaixo.</P>
+
+<CENTER><IMG SRC="sql2.gif"></CENTER>
+
+<P>Além disso é preciso ter claro se a consulta se destina ao quadro do TabWin ou a 
+ser salva como um arquivo DBF para tabulação posterior. Como o TabWin foi criado 
+essencialmente para apurar quantitativos por categoria, se a consulta se 
+destinar ao quadro do TabWin, apenas a primeira coluna, a da descrição das 
+linhas, pode ter caracteres alfabéticos. As demais colunas podem conter apenas 
+números. Qualquer valor não numérico será convertido para zeros. </P>
+
+<P>Quando for necessário usar duas colunas alfabéticas para identificar as linhas 
+no quadro do TabWin(ex: código e nome), é preciso concatenar os dois campos para 
+gerar uma só coluna.</P>
+ 
+<P>Exemplo para Firebird, SQLite, PostGres e Oracle:</P>
+ 
+<PRE>SELECT CODIGO||' '||NOME as Municipio, .....</PRE>
+ 
+<P>Exemplo para MySQL:</P>
+ 
+<PRE>SELECT concat(CODIGO,' ',NOME) as Municipio, ....</PRE>  
+
+
+<P>Evidentemente, se a consulta se destina a criação de um arquivo DBF, não há 
+essa restrição.</P> 
+
+<P>São os seguintes os controles disponíveis no formuário de consulta:</P>
+
+<B><P>Parte superior:</P></B>
+
+<ul> <LI><P><B>Lista de consultas</B>. Nesta lista aparecem todas as 
+consultas existentes no diretório e que foram salvas com um título de 
+identificação. Sua seleção permite executada-las com os botões 
+"Executar" e "SalvaDBF". Cada vez que um item é selecionado na lista o 
+texto SQL da consulta e carregado na janela inferior, os campos título 
+e parametro são atualizados e o banco de dados a que se aplica fica 
+selecionado. Se form um abanco de dados que exija senha para seu 
+acesso ela é solicitada do usuário nesta ocasião. Um duplo clique 
+nesta lista faz com que a consulta seja executada 
+automáticamente.</P></LI>
+
+<LI><P><B>Botão "Executar"</B>. Este botão faz a consulta existente na 
+janela inferior ser executada no banco de dados selecionado colocando 
+o resultado em um quadro do TabWin. Se o campo parâmetro estiver 
+presente abre-se uma janela que solicita o seu preenchimento pelo 
+usuário.</P></LI>
+
+<LI><P><B>Botão "Salvar DBF"</B>. Este botão faz a consulta existente 
+na janela inferior ser executada no banco de dados selecionado 
+colocando o resultado em um arquivo tipo DBF no diretório e com o nome 
+que o usuário escolher. Se o campo parâmetro estiver presente abre-se 
+uma janela que solicita o seu preenchimento pelo usuário.</P></LI>
+
+<LI><P><B>Botão "Retorna"</B>. Este botão fecha o form de consulta 
+retornando ao TabWin.</P></LI>
+
+<LI><P><B>Botão "Abrir SQL"</B>. Este botão permite carregar uma consulta 
+SQL na janela de texto SQL inferior. Seu acionamento provoca a 
+alteração do diretório de dados e as demais consultas SQL disponíveis 
+no diretório selecionado são carregadas no lista de consultas. Este 
+botão permite carregar qualquer consulta SQL mesmo que não tenha sido 
+salva com um título e, por isso, não apareça na lista de 
+consultas.</P></LI>
+
+<LI><P><B>Botão "Salvar SQL"</B>. Este botão permite salvar em um arquivo, 
+com extensão SQL, uma consulta SQL sendo desenvolvida. São salvas 
+junto com o texto SQL da consulta o título da mesma, o nome do banco 
+de dados (alias) a que se refere além do parametro, se 
+existir.</P</LI>>
+
+<LI><P><B>Botão "Novo SQL"</B>. Este botão se destina a iniciar a 
+construção de uma nova consulta. Limpa os campos título e parâmetro e 
+remove o texto SQL existente acrescentando o "select" inicial. 
+</P></LI>
+
+<LI><P><B>Botão "Modo Usuário"</B>. Este botão, que quando acionado 
+passa a se chamar "Modo Programador" se destina a alterar o modo da 
+janela entre usuário e programador.</P></LI> </ul>
+
+<B><P>Parte Intermediária:</P></B>
+
+<ul> <LI><P><B>"Banco de Dados"</B>. Este combobox permite escolher 
+qual o banco de dados em relação ao qual a consulta será realizada. 
+Cada nome que aparece na lista constitue o que, na linguagem do BDE, é 
+chamado de ALIAS. Ou seja um nome pelo qual o banco de dados é 
+referido e atraves do qual são recuperados todos os parâmetros quer 
+permitem identificá-los</P></LI>
+
+<LI><P><B>Botão "Adiciona"</B>. Este botão permite adicionar na lista 
+de banco de dados ("alias" na nomenclatura do BDE) um novo banco de 
+dados STANDARD tendo como padrão o tipo FOXPRO. Para cria-lo é 
+necessário escolher o diretório aonde estarão as tabelas. Bancos de 
+dados STANDARD são apenas Paradox, dBase e FoxPro. Outros tipos de 
+bancos de dados não STANDARD devem ser criados e removidos com o "BDE 
+Administrator" que é instalado junto com o BDE.</P></LI>
+
+<LI> <P><B>Botão "Remove"</B>. Este botão, que somente fica ativo ao 
+selecionar um Banco de Dados STANDARD, permite remover da lista o 
+banco de dados selecionado.</P></LI>
+
+<LI><P><B>Botão "BDE"</B> para permite ativar o BDE 
+Administrator(BDEAdmin.exe) de dentro do TabWin para criar, adicionar, 
+editar e excluir bancos de dados não STANDARD. Este botão facilita o 
+acesso ao BDE para uso de bancos diferentes de FoxPro que são criados 
+e removidos diretamente pelos botões "Adicionar" e "remover".</P></LI>
+
+<LI><P><B>Botão "Lote"</B> par executar um arquivo que contém lote de 
+consultas SQL que salva os resultados em DBF. O arquivo de lote, com 
+extensão ".txt", deve conter, em cada linha, separados por vírgula, o 
+nome da consulta sql e nome do arquivo DBF que vai armazenar o 
+resultado da consulta. Opcionalmente, a linha pode conter, ainda, o 
+valor do parâmetro associado a consulta.</P></LI>
+
+<LI><P><B>Campo "Parâmetro"</B>. Este campo permite associar a 
+consulta SQL um parâmetro que será solicitado ao usuário, no momento 
+da execução da mesma, permitindo que haja uma substituição em algun 
+texto da consulta. O nome do parâmetro é o mesmo que vai aparecer no 
+texto da consulta SQL precedido por ":". </P></LI>
+
+<LI><P><B>Campo "Título"</B>. Este campo permite associar um título a 
+consulta SQL. Este é o título que vai figurar na lista de consultas 
+após a consulta ser salva.</P></LI>
+
+<LI><P><B>Lista de "Tabelas em"</B>. Esta lista contém todas as 
+tabelas do banco de dados selecionado. Quando uma tabela desta lista é 
+selecionada, suas colunas aparecem na lista "Colunas em". O nome de 
+uma tabela pode ser transferido para o texto SQL com um duplo clique 
+ou arrastando o mesmo com o mouse para a janela SQL.</P>   </LI>
+
+<LI><P><B>Lista de "Colunas em"</B>. Esta lista contém todos os nomes 
+de colunas da tabela selecionada na lista anterior. Os nomes de uma ou 
+mais colunas podem ser transferidos para o texto SQL com um duplo 
+clique ou arrastando a seleção com o mouse para a janela SQL. 
+</P></LI>  
+
+<LI><P><B>Caixa "Qualifica nome da coluna"</B>. Esta caixa deve ser 
+assinalada quando temos nomes de colunas iguais em tabelas diferentes 
+e, para não haver confusão no SQL, o nome da coluna deve ser 
+transferido para o texto SQL precedido do nome da tabela, na forma 
+<nome da tabela>.<nome da coluna>.</P></LI>
+
+<LI><P><B>Botão "A"</B>. Este botão com a letra A, de agrupar,  gera 
+no texto SQL, o código para agrupar os dados da tabela de acordo com 
+os campos selecionados.</P></LI>
+
+<LI><P><B>Botão "Soma"</B>. Este botão com o símbolo de somatório, 
+gera no texto SQL, o código para obter o somatório dos campos 
+selecionados. Usado em combinação com o botão acima permite obter 
+facilmente somatórios de valores em dados agregados.</P></LI>
+
+<LI><P><B>Botão "cnv"</B>. Este botão mostra um diálogo para gerar código SQL a 
+partir de um arquivo CNV. A execução do código gerado, que será diferente para 
+linhas ou colunas, depende da implementação da instrução "case" no gerenciador 
+de banco de dados em uso. Isto inclue Oracle, a partir do versão 8i, Firebird a 
+partir da versão 1.5, PostGres e Mysql. Os bancos de dados STANDARD não suportam 
+a instrução "case".</P></LI>
+
+<LI><P><B>Botão "cvc"</B>. Este botão ativa o "Construtor 
+Visual de Consultas" que é uma janela para gerar código SQL a partir de uma 
+representação visual das tabelas envolvidas e de suas ligações.</P></LI>
+
+<LI><P><B>Botão "Tabela"</B>. Este botão, com a imagem de uma tabela, 
+permite visualizar em uma janela a parte os dados da tabela 
+selecionada. É util para conhecermos os dados contidos em cada campo o 
+que muitas vezes não fica claro apenas com o nome da coluna.</P></LI> 
+</ul>
+
+<B><P>Parte Inferior:</P></B>
+
+<ul> <LI><P><B>Janela "SQL"</B>. Esta área contém o texto do comando 
+SQL que vai ser executado. Pode conter o texto gerado diretamente pelo 
+programador a partir das tabelas e colunas do banco de dados 
+selecionados como também o texto copiado via clipboard a partir de 
+outras aplicações.</P></LI> </ul>
+
+<H3><A NAME="sqldatamart">Quando criar uma visão 
+local da base de dados.</A></H3>
+
+<P>O TabWin pode tanto executar consultas sobre o banco de dados, 
+colocando o resultado diretamente no quadro, quanto pode salvar 
+resultados das consultas como um arquivo local.</P>
+
+<P>Se você quiser uma consulta sobre a base de dados que precisa 
+representar a situação de um momento (por exemplo: a lista dos leitos 
+disponíveis para internação) você é obrigado a executar a consulta a 
+cada vez sobre o banco de produção.</P>
+
+<P>Se você vai realizar uma consulta não repetitiva, em caráter 
+eventual, pode ser possível utilizar diretamente o banco de produção. 
+</P> 
+
+<P>Entretanto, a execução de análises estatísticas, originadas por 
+usuários simultâneos, sobre uma base de dados em produção tem vários 
+inconvenientes:</P>
+
+<ol>
+
+<LI>As consultas analíticas envolvem o processamento de um grande 
+número de registros, com operações complexas, repetidas várias vezes 
+com pequenas alterações, o que costuma degradar, de forma inaceitável, 
+a performance do banco.</LI>
+
+<LI>As tabelas intermediárias que precisam ser criadas durante o 
+processo de análise, (hipercubos) costumam ser diferentes em processos 
+diferentes de pesquisa e a sua criação dentro do próprio banco exige 
+atribuição de privilégios de administrador. (GRANT para criar índices 
+e tabelas por exemplo) E isto, ou se torna um obstáculo burocrático ao 
+processo de análise ou, cria um problema de segurança para o 
+gerenciamento do Banco de Dados.</LI>
+
+<LI>O uso de tabelas locais em DBF permite usar esses dados tanto com 
+SQL quanto com o motor tradicional de tabulação cruzada do TabWin 
+(usando DEFs e CNVs), bastante estável e com eficiência já comprovada 
+com grande volume de dados.</LI>
+
+<LI>O TabWin permite que um conjunto de dados de interesse analítico para 
+vários usuários (técnicos dos serviços ou pesquisadores da academia) 
+possa ser distribuído de forma independente do banco de produção para 
+permitir o seu uso local em vários pontos. O recurso de compressão dos 
+dados (DBC) do TabWin tem sido largamente utilizados nos CDs 
+distribuidos pelo MS.</LI>
+
+</ol>
+
+<P>Assim, se o seu objetivo é percorrer diversas vezes uma mesma tabela, 
+fazendo análises variadas com multiplos critérios, é mais adequado 
+criar uma cópia local da base de dados.</P>
+
+<P>Se você pretende distribuir um volume grande de dados, para serem 
+analisados por várias equipes de saúde, a criação de cópia local e a 
+sua distribuição via CDs ou outro meio pode ser a única forma de 
+viabilizar o processo.</P>
+
+
+
+<H3><A NAME="sqltab">Ativando consultas a partir da janela de 
+tabulação.</A></H3>
+
+<P>Apesar da flexibilidade da linguagem SQL muitas vezes é conveniente 
+salvar o resultado da consulta em um arquivo DBF e posteriormente 
+analizá-lo através de um arquivo DEF com CNVs específicos.</P>
+
+<P>Isto pelas seguintes razões:</P>
+
+<UL> <LI><P>O código SQL para uma tabulação cruzada é relativamente 
+complicado;</P></LI>
+
+<LI><P>Cada combinação de linha, coluna e seleção exige um consulta 
+SQL separada;</P></LI>
+
+
+<LI><P>Todas as consultas SQL atuam sobre os campos no arquivo com os 
+nomes padronizados e com as variáveis representadas por seus códigos 
+internos. Através de DEF e CNVs damos aos usuários a possibilidade de 
+referenciar as variáveis e as categorias que as mesmas assumem com os 
+nomes que êles estão habituados a usar o que facilita muito na 
+especificação da tabela que precisam produzir.</P></LI> </UL>
+
+<P>Isto gera, entretanto, um problema de sincronização em relação a um 
+banco de dados relacional que esteja sendo atualizado continuamente, 
+como, por exemplo, num sistema que registre os atendimentos realizados 
+em um ambulatório ou hospital. Os atendimentos registrados após a 
+geração do DBF não constam do arquivo.</P>  
+
+<P>Assim, para simplificar a sincronização, foi implementada um opção 
+no arquivo DEF que permite associar uma consulta SQL aquele DEF e que 
+é ativada automaticamente quando o usuário clicar sobre o botão 
+"Importa dados".</P>
+
+<P>Nesse caso, o programa pede o nome de um arquivo DBF e grava no 
+mesmo o resultado da consulta realizada no banco de dados e que 
+reflete a situação dos registros naquele instante.</P>
+
+<P>Para isto basta informar, no comando "A" do arquivo DEF, após a 
+especificação dos arquivos a tabular e separado por uma vírgula, o 
+nome da consulta SQL que gera o DBF a ser usado, como no exemplo 
+abaixo:</P>
+
+<pre>A\dados\meudbf*.db?,\dados\gerameudbf.sql</pre>
+
+
+<H3><A NAME="sqlbde">É preciso instalar o BDE?</A></H3>
+
+<P>Normalmente não!</p>
+
+<p>O TabWin 3.x é distribuído sem o BDE porque usuário que utiliza a 
+interface para extrair dados de um banco SQL ligado a uma aplicação do 
+DATASUS  não necessitará instalar o BDE já que o mesmo deverá ter sido 
+instalado pelo aplicativo que coleta e gerencia os dados.</P>
+
+<P>Você saberá se o BDE já está instalado em sua máquina procurando o 
+botão SQL (aquele com o Q vermelho) na barra de ferramentas. Se ele 
+estiver visível o BDE já estará instalado.</P>
+
+<P>Entretanto, no caso de o BDE ainda não estar 
+instalado em sua máquina, será necessário proceder a instalação do 
+mesmo o que vai exigir baixar da Internet, além do pacote que contém o 
+TabWin, também o arquivo "bdeinst.zip".</P>
+
+<P>Para isto pode simplesmente baixar o arquivo <A 
+HREF="http://www.datasus.gov.br/tabwin/bdeinst.zip"> bdeinst.zip </A>, 
+disponível na página de download do TabWin, e expandir o arquivo 
+"bdeinst.dll" no mesmo diretório onde fica o executável do TabWin. Em 
+seguida, executar o TabWin e ativar a opção de menu "Arquivo/Instalar 
+BDE standard" que somente é visível enquanto o BDE não tiver sido 
+instalado. </P>
+
+<P>Durante a instalação do BDE pode aparecer uma 
+mensagem de erro dizendo que não há espaço em disco para a instalação 
+do BDE. Pode ignorar a mensagem e prosseguir pois se trata de um erro 
+da "BDEInst.dll"</P>
+
+<P>Após a execução bem sucedida desta instalação, o 
+botão SQL terá se tornado visível e você poderá utilizar suas funções. 
+O item de menu "Instalar BDE standard" não ficará mais 
+visível.</P>
+
+<P>Evidentemente, após a instalação do BDE, será necessário criar, com 
+o  BDEAdmin.exe, programa que terá sido instalado junto com o BDE, o 
+ALIAS para cada Bancos de Dados que você quer ativar. 
+
+<P>No caso de ser um banco do tipo FoxPro (com 
+extensão .DBF) o próprio TabWin fornece botão "Adiciona", debaixo da 
+combobox "Banco de Dados", banco de dados para incluir o 
+ALIAS.</P>
+
+<P>No caso de ser uma conexão via ODBC a fonte de 
+dados pode ser definida diretamento pelo "Administrador de ODBC". 
+(Painel de controle/ferramentas administrativas/ODBC32)</P>
+
+<P>Muitas informações úteis para a configuração e administração do BDE 
+podem ser encontradas na <A 
+HREF="http://www.bdesupport.com/index.html" target="_blank"> BDE 
+Support Page</A>.</P>
+
+<P>Como cada um desses servidores de bancos de dados vai requerer, 
+além do BDE, a instalação de um módulo cliente cujos detalhes 
+específicos de configuração somente serão fornecidos pelo 
+administrador de banco de dados de sua organização, 
+recomendamos acionar o mesmo para a instalação do BDE e o driver 
+ODBC.</P>
+
+<P><B>Recomendações específicas para alguns Bancos de Dados:</B></P>
+
+<ul>
+
+<LI><B>Oracle:</B> Usar o driver ODBC fornecido junto com o seu cliente 
+Oracle. (O driver da Microsoft pode apresentar alguns erros -
+"Capability not suported")</LI>
+
+<LI><B>PostGres:</B> Até esta data o driver ODBC da versão 8.0 ainda está com 
+problemas. Usar o driver ODBC da versão 7.3.2.. e configurar as opções do 
+"DataSource" para operar com o BDE com as seguintes opções:
+<ul>
+
+<LI>"Data Type Options":Marcar "Text as LongVarchar"</LI>
+
+<LI>"Data Type Options":Desmarcar "Unknowns as LongVarchar"</LI>
+
+<LI>"Unknown Sizes Options": Marcar "Longest"</LI>
+
+<LI>Se estiver usando um protocolo anterior a PostGres 6.4, marcar "Parse Statements"</LI> </ul>
+
+</LI>
+
+<LI><B>Firebird:</B> Usar o driver ODBC distribuido com o Firebird 1.5. Mesmo 
+que a aplicação possa acessar o banco de dados com o driver INTRBASE 
+nativo do BDE, somente a conexão via ODBC vai suportar as consultas 
+geradas de CNV</LI>.
+
+ </ul>
+
+
+<HR>
+
+<H2><A NAME="import">Importando dados de arquivos externos (XML,SDF,CSV,DBF)</A></H2>
+
+<P>A função de adicionar registros está disponível na janela de 
+Visualizar Arquivo DBF e somente fica ativada após temos aberto um 
+arquivo do tipo DBF que vai receber os registros.</P>
+
+<P>Atualmente é possível adicionar registros a partir de arquivos nos 
+formatos DBF, texto delimitado (CSV), SDF (System Data File) e XML 
+(Extensible MarkUp Language)</P>
+
+<P><B>Adicionando registros de arquivo tipo DBF.</B></P> 
+
+<P>Para adicionar no arquivo aberto dados de outro arquivo DBF 
+(dBaseIII+, Clipper, FoxPro etc...) basta selecionar o arquivo. 
+Somente serão adicionados os campos do arquivo de origem que tiverem 
+os mesmos nomes no arquivo de destino. Os campos sem correspondente no 
+arquivo de origem serão preenchidos com espaços.</P>
+
+<P>Os campos serão considerados com os comprimentos e alinhamentos 
+correspondentes ao especificados no arquivo de destino. Campos de 
+tipo numérico serão alinhados a direita e os demais tipos serão 
+alinhados a esquerda.</P>
+
+<P><B>Adicionando registros de arquivo delimitado(CSV):</B></P>
+
+<P>Arquivo "delimitado" é um arquivo de texto simples em que temos uma
+linha para cada registro no DBF e no qual os campos estão delimitados
+por um separador. O separador padrão é o caractere "|" porém, se for
+necessário, após escolher o nome do arquivo, você pode escolher outro
+separador.</P>
+
+<P>O arquivo não pode ter o nome das colunas na primeira linha devendo
+conter somente linhas de dados separadas por CR/LF no padrão Windows.</P>
+
+<P>Este módulo não trata aspas simples ou duplas como delimitadores. A
+ocorrência do separador entre aspas vai provocar a quebra do campo
+de dados.</P>
+
+<P><B>Adicionando registros de arquivo SDF:</B><P>
+
+<P>Arquivo "SDF" é um arquivo de texto simples, com uma linha para cada
+registro, separadas por CR/LF no qual todos os campos tem exatamente a
+mesma largura que está definida para eles no DBF.  A linha é copiada
+exatamente como está para cada registro do arquivo.</P>
+
+<P><B>Adicionando  registros de arquivo XML:</B></P>
+
+<P>Arquivo XML é um arquivo de texto no qual as informações estão
+representadas entre marcadores (tags) colocadas entre "<" e ">" que
+definem o significado de cada informação. Este formato permite
+representar informações bastante complexas, embutir hierarquias de
+dados e suportar itens de ocorrência opcional. Os arquivos XML vem
+sendo cada vez mais usados na troca de informações entre computadores
+na Internet.</P>
+
+<P>Além do processamento de dados de arquivos XML ser bastante complexo a
+diversidade de tipos de documentos e estruturas desaconselha a
+manipulação do mesmo diretamente pelo programa.</P>
+
+<P>Para viabilizar o processamento dos dados do arquivo XML o TabWin
+utiliza processadores de XSLT externos para analisar o XML e extrair
+os dados na forma de um arquivo delimitado simples, com os campos
+separados por "|".</P>
+
+<P>Assim, para adicionar registros de arquivo XML você precisa escolher,
+além do nome do arquivo XML, o nome de um arquivo do tipo XSL (folha
+de estilo) que vai orientar a extração dos dados. Observe que é
+necessária uma "folha de estilo" diferente para cada tipo de arquivo
+XML e para cada tipo de arquivo DBF.</P>
+
+<P>Embora seja possível usar a "folha de estilo" e um processador de 
+XSLT diretamente da linha de comando para gerar manualmente um 
+arquivo delimitado que possa ser utilizado diretamente, o TabWin 
+procura facilitar o processo de captura, acionando o processador de 
+XSLT, passando para o mesmo o nome do arquivo XML e do arquivo XSL e 
+capturando as linhas de saída que são geradas para transferi-las para 
+o DBF.</P>
+
+<P><B>Configurando o seu processador de XSLT</B></P>
+
+<P>Durante a inicialização, o TabWin procura, no seu diretório de 
+execução, o processador de XSLT da Microsoft (MSXSL.EXE) e, se 
+encontrá-lo, o configura automáticamente. Além disso, o Tabwin permite a você 
+configurar qualquer outro processador de sua escolha o que é conveniente 
+porque os processadores de XSLT tem suporte e desempenho diferentes para 
+diferentes tipos de transformação.</P>
+
+<P>Para configurar outro processador de XSLT basta acionar a opção 
+"Configurar processador XSLT" no menu de "Adicionar registros". Você 
+entrará em um diálogo de abertura de arquivo que permitirá escolher um 
+arquivo com as extensões .exe, .bat ou .jar.</P>
+
+<P>Quando você ativar "Via XSLT com ..." o TabWin pedirá para você escolher o 
+arquivo XML e a folha de estilo (.XSL) e vai executar o programa configurado 
+passando como parâmetros o nome do XML e do XSL escolhidos, nesta ordem, e vai 
+capturar a saida da transformação colocando-a no DBF em uso.</P>
+
+<P>Observe que, se o processador escolhido não for capaz de enviar as
+linhas de saída para "stdout", de forma que o TabWin possa captura-las,
+será necessário criar um arquivo do tipo .bat que receba o nome dos
+arquivos XML e XSL, crie o arquivo delimitado de saída e envie o
+mesmo com "type" para stdout de forma que as linhas possam ser
+capturadas.</P>
+
+<P>Veja o exemplo do arquivo Unicorn.bat que permite o uso do processador
+de XSLT da Unicorn.</P>
+
+<PRE>c:\Unicorn\uxt.exe %1 %2 temp.txt
+type temp.txt</PRE>
+
+<P>A criação de um arquivo .bat pode ser necessária também para 
+configurar alguns processadores em Java quando a configuração da linha 
+de comando exigir mais do que simplesmente chamar o programa com:</P>
+
+<PRE>java -jar "&lt;nome do programa&gt; &lt;arquivo XML&gt; &lt;arquivo XSL&gt;"</PRE>
+
+<P>o que é feito automaticamente pelo TabWin quando a extensão do 
+programa configurada for .jar.</P>
+
+<P>Outro uso do arquivo .bat é passar os argumentos em ordem inversa 
+para processadores como XALAN ou Sablotron, como vemos nos exemplos 
+sablotron.bat e xalan.bat abaixo:</P>
+
+<PRE>c:\sablotron\sabcmd %2 %1</PRE>
+
+<P>ou</P>
+
+<PRE>c:\xalan\xalan %2 %1</PRE>
+
+<HR>
+
+<H2><A NAME="cartog">Importação de bases cartográficas municipais</A></H2>
+
+<P><B>Introdução</B></P>
+
+<P>Com o objetivo de estimular o uso de dados espaciais de saúde a nível
+de município foram introduzidas no TabWin facilidades para importação
+de bases cartográficas geradas pelos programas GIS mais usados no
+país.</P>
+
+<P>Como a geração de bases cartográficas consome tempo, esforço e
+recursos financeiros significativos, recomendamos entrar em contato
+com os órgãos do seu município que já  estão fazendo as bases
+cartográficas municipais,  e identificar qual o software que  está
+sendo utilizado, para aproveitar o esforço já realizado.</P>
+
+<P>Ao exportar as bases cartográficas de seu município para o TabWin você 
+poderá utilizá-las para a análise do dados de saúde produzidos pelos
+sistemas nacionais e distribuí-las  pelos vários setores da secretaria
+de saúde já que o TabWin é de uso gratuito.</P>
+
+<P>É preciso  estar atento a que algumas bases cartográficas são 
+proprietárias e existem restrições a seu uso. Certifique-se que você 
+pode usar e ou distribuir os arquivos de seu município antes de 
+importá-los para o TabWin.</P>
+
+<P><B>Considerações gerais</B></P>
+
+<UL>
+<LI><P>O arquivo vai ser aberto pelo menu
+ "Arquivo"/"Abrir/Importar mapa". No diálogo de abertura do arquivo clicar
+em "Mostrar arquivos do tipo" para isolar a extensão. O TabWin vai gerar
+ um arquivo .map com o mesmo nome do arquivo de entrada.</P></LI>
+
+<LI><P>Conceituar mapa base e outras camadas.</P></LI>
+
+<LI><P>Gerar arquivos para importar no TabWin atentando para gerar uma camada 
+para cada entidade para permitir a importação para arquivos separados 
+no TabWin.</P></LI>
+
+<LI><P>Lembre-se de sempre importar para o TabWin em arquivos cujos nomes 
+facilitam a identificação do conteúdo da camada, já que o nome da 
+camada é o mesmo nome do arquivo. </P></LI>
+
+<LI><P>Gerar arquivos separados para cada camada de pontos, linhas e 
+polígonos.</P></LI>
+
+<LI><P>Gerar todas as camadas no mesmo sistema de coordenadas, mesma projeção 
+e mesmas unidades.</P></LI>
+
+<LI><P>Se vai plotar pontos captados com GPS, ou incluir as camadas nos 
+arquivos distribuídos pelo DATASUS é útil manter os mapas em 
+coordenadas geográficas.</P> </LI>
+  
+<LI><P>Após importar o mapa base usar o TabWin para salvar o mapa recém 
+aberto como .CNV.(Tabela de Conversão). Utilizar este .CNV no arquivo 
+.DEF, associando à variável no .DBF que contém os códigos para gerar
+as tabulações com os nomes corretos para o  relacionamento entra a
+tabela e o mapa.</P></LI>
+</UL>
+
+<P><B>ARC/INFO (.E00)</B></P>
+
+<P>Execute EXPORT sempre com a opção NONE. Somente arquivos ASCII não 
+comprimidos (UNCOMPRESSED) serão lidos pelo TabWin.</P>
+<P>
+Sempre execute IMPORT com o arquivo E00 gerado antes de transferi-lo 
+porque EXPORT não testa a existência de erros no arquivo. IMPORT, ao 
+contrário, testa a integridade da camada. Quaisquer correções devem 
+ser feitas no arquivo original e não no E00.</P>
+
+<P>É recomendável executar CLEAN e BUILD antes de exportar uma camada.</P> 
+
+<P>O Tabwin tratará corretamente "coverages" em precisão simples ou 
+estendida, como também arquivos texto gerados tanto para UNIX quanto 
+para  Windows.</P>
+
+<P>Em um E00 com linhas e polígonos o TabWin retirará sempre os 
+Polígonos. O TabWin foi programado para importar E00 com camadas de 
+polígonos, linhas ou pontos. Arquivos com outras entidades poderão não
+ser importados.</P>
+
+<P><B>ArcView Shapefiles (.SHP/.DBF)</B></P>
+
+<P>Este é hoje um dos formatos mais usados para a distribuição de bases 
+cartográficas em formato vetorial.</P>
+
+<P>O TabWin abrirá diretamente os shapefiles (.shp) usados pelo 
+ArqView. Durante o processo o TabWin irá pedir para você escolher, da 
+lista de campos do DBF que acompanha o shapefile, quais os que serão 
+usados como código e nome para identificar a área. </P>
+
+<P>Se você escolher o mesmo campo para código e para nome o TabWin vai 
+perguntar ainda se você quer extrair o código de dentro do campo que 
+contém o nome. Para que isso seja viável é necessário que o código 
+estaja separado do resto do nome por um espaço em branco.</P>
+
+<P>Não  é necessário nenhum procedimento especial para exportação. Não 
+esquecer, entretanto, de trazer para o TabWin também os arquivos com
+extensão  .DBF correspondentes a cada .SHP.</P>
+
+<P>Se você estiver usando um editor de Shapefiles que permite associar apenas um 
+nome a cada objeto (EpiMap 2000, NRDB image2shape) não esqueça de, ao dar o nome 
+das áreas, colocar um código de tamanho fixo antes do nome e separá-los por um 
+espaço.</P>
+
+<P><B>Atlas GIS (.BNA)</B></P>
+
+<P>Observe que o arquivo Atlas Geo File(.AGF) que contém as bases 
+gráficas no Atlas GIS, é um arquivo que contém várias camadas de 
+informação. Você precisa selecionar antes a camada que você quer
+importar.</P>
+
+<P>Se for converter as coordenadas do arquivo para  Coordenadas 
+Geográficas de latitude e longitude, via menu use "Map/Change 
+Projection/LL".</P>  
+
+<P>Você pode usar dois caminhos para importar para o TabWin:</P>
+
+<OL>
+<LI><P>Exportar o .AGF para .BNA usando o IE.EXE que acompanha o Atlas Gis, 
+com a seguinte linha de comando:</P>
+
+<PRE>IE nome_arquivo.AGF nome_arquivo.BNA  /NAMES 2</PRE>
+
+<P>Este comando gerará um arquivo .BNA com dois nomes para cada área 
+(Código e Nome) que será aberto diretamente pelo TabWin.</P></LI>
+
+<LI><P>Ou, se você não dispõe do IE.EXE, que é um produto separado do 
+Atlas-GIS, você pode também utilizar o  programa gratuito da ESRI, 
+chamado  agfshp.exe, extraido do arquivo agfshp.zip disponível para 
+download no site da <A 
+HREF="http://www.esri.com/software/atlas/converters.html" 
+target="_blank"> ESRI</A>, proprietária do Atlas GIS, que transformará 
+o .AGF em shapefile, formato  do ArqView, outro produto da ESRI, que o 
+TabWin abrirá normalmente.</P></LI> </OL>
+
+<P>Siga as instruções do arquivo agfshp.txt que o acompanha.</P>
+
+
+<P><B>EPIMAP 2 (.BND)</B></P>
+
+<P>O TabWin abrirá diretamente arquivos .BND do EpiMap, tanto em formato 
+ASCII quanto comprimido.</P>
+
+<P>O TabWin procura, como a primeira entidade em um arquivo .BND a 
+informação de "CORNERS_".  Se por acaso esta informação estiver
+ausente  no arquivo (Está ausente em alguns arquivos ASCII
+distribuídos com o  EpiMap), haverá uma mensagem de erro e você terá
+duas alternativas:</P>
+
+<OL>
+<LI>Importar e exportar o arquivo com o próprio EpiMap. Esta operação 
+gerará um arquivo com registro de CORNERS_ correto.</LI>
+
+<LI>Mudar a extensão do arquivo para .bna e abrir como se fosse arquivo
+do Atlas GIS.</LI>
+</OL>
+
+<P><B>MapInfo (.MIF/.MID)</B></P>
+
+<P>Exportar as camadas como .MIF/MID "MapInfo Interchange file"</P>
+
+<P><B>Map Maker Export (.MME)</B></P>
+
+<P>O suporte ao formato Map Maker Export (.MME) vem substituir o suporte ao 
+formato MapMaker XY, que não é mais exportado pelo Map Maker Gratis.</P>
+
+<P>O formato MME tem a vantagem de tratar separadamente o "id" e o "name" de cada 
+objeto, que correspondem no TabWin a "Geocódigo" e "Nome" e tratar corretamente 
+polígonos complexos como um único objeto. </P> 
+
+<P>No menu principal do MapMaker escolher:
+ <B>"Utilities/Vector utilities/Export files/to Map Maker Export file"</B>
+</P>
+
+<P>No primeiro diálogo escolha o arquivo .dra que você quer exportar. 
+Clique em "Next step" até chegar ao diálogo para escolher o nome e o diretório do 
+arquivo com extensão .MME a ser gravado. Aí então confirme a gravação.</P>  
+
+<P>O TabWin abrirá diretamente o arquivo .MME gerado do qual importará 
+polígonos, linhas e pontos em 2D.</P>
+
+<P><B>SPRING (_POL.SPR/_L2D.SPR/_LAB.SPR'.)</B></P>
+<P>
+Selecionar antes o Plano de Informação (PI) a ser exportado no painel 
+de controle. Clique no ícone do lápis para desenhar antes e ter
+certeza do que está sendo exportado.</P>
+<P>
+Depois, em Arquivo/Exportar, marcar "Polígonos e identificadores" ou 
+"Linhas e identificadores" ou "Pontos" de acordo com o conteúdo do PI. 
+Marque também Formato "ASCII", o separador ";" e escolha o diretório e 
+nome do arquivo a ser gravado.</P>
+<P>
+O Tabwin mostrará para escolha as os arquivos com os nomes terminados
+por '*_POL.SPR',  '*_L2D.SPR' e '*_LAB.SPR'.</P>
+
+<P>Se for uma camada de polígonos ou de linhas escolher somente o arquivo 
+com as extensões "_POL.SPR" ou "_L2D.SPR" respectivamente, por que o 
+TabWin irá buscar automaticamente os identificadores no arquivo 
+"_LAB.SPR"  de nome correspondente.</P>
+
+<P>Somente escolha o arquivo com a extensão "_LAB.SPR" se estiver
+importando uma camada de pontos.</P>
+
+<B><P>Importando pontos capturados de GPS.</P></B>
+
+<P>A multiplicidade de formatos de arquivo gerados pelos GPS (Global 
+Positioning System) de vários fabricantes ou importados por vários 
+programas diferentes tornava complexa a tarefa de importá-los para o 
+TabWin.</P> 
+
+<P>O surgimento do formato chamado de GPX que é um padrão XML para 
+troca de dados de GPS especificado no site <A 
+HREF="http://www.topografix.com/gpx.asp"> GPX: the GPS Exchange Format 
+</A> veio permitir a implementação no TabWin de um processo para 
+importar, como arquivo DBF, de forma a ser usado como camada sobre um 
+mapa base, pontos capturados de vários tipos tipos de aparelhos de GPS. </P> 
+
+<P>Tanto para descarregar os dados de seu GPS em formato GPX como para 
+converter em GPX dados de GPS já gravados em outros formatos, 
+recomendamos baixar da Internet um software livre chamado <A 
+HREF="http://gpsbabel.sourceforge.net/">GPSBabel</A>.</P>
+
+<P>É preciso também criar um DBF vazio com a estrutura abaixo (o que 
+pode ser feito usando a janela SQL) para receber os waypoints:</P>
+
+<pre>
+CREATE TABLE WAYPOINTS (
+  NOME       CHAR(20),
+  LATITUDE   NUMERIC(10,6),
+  LONGITUDE  NUMERIC(10,6),
+  COMENTARIO CHAR(40));
+</pre>
+
+<P>De posse do arquivo GPX e DBF criado pelo processo acima, é 
+preciso abri-lo, com a opção de menu "Arquivo/Ver arquivo DBF" e, na 
+janela de ver DBF, clicar em "Adicionar Registros/Via XSLT usando 
+msxsl.exe". Escolher, em seqüência, o arquivo GPX com os seus dados e 
+em seguida a folha de estilo de nome "CarregaWayPoints.xsl" 
+distribuída com o TabWin e disponível em seu diretório de 
+execução.</P>
+
+<P>O TabWin vai ativar um processador de XSLT e adicionar no DBF já 
+criado todos os WayPoints extraídos de seu arquivo.</P>
+
+<P>Para adicionar este DBF como uma camada em um mapa já aberto basta 
+clicar no botão "Nova camada", no dialogo que vai abrir escolher, 
+arquivos do tipo "dBaseIII+", e finalmente escolher o nome do seu DBF.</P>   
+  
+
+<hr>
+
+<H2><A NAME="fluxo">Análise de fluxos de atendimento</A></H2>
+
+<P>Vários sistemas do informação do SUS coletam informações sobre a origem e 
+destino dos pacientes. Considerando a necessidade de dispor de uma ferramenta 
+que permita a análise desse deslocamentos em busca de atendimentos, fundamentais 
+não apenas para o conhecimento da situação epidemiológica como também para o 
+planejamento da rede assistencial, foi implementado no TabWin um mecanismo de 
+apuração dessas informações.</P>  
+
+<P>O TabWin teve o número máximo de colunas ampliado para 6.000 de forma a permitir 
+tabulações em que se coloca, por exemplo, município de orígem nas linhas e 
+município de destino nas colunas. Assim cada célula da tabulação contém o número 
+de indivíduos residentes no município da linha que tiveram atendimento no 
+município da coluna.</P>
+
+<P>Ao plotarmos um mapa com o quadro resultante, podemos então ativar, de dentro da 
+janela de mapa, a opção de menu "Arquivo/Gravar tabela de fluxo" que permite 
+gravar um DBF com os fluxos origem e destino dos eventos na tabela sendo 
+mapeada.</P>
+
+<P>Este DBF vai conter uma linha para cada célula do quadro que for diferente de 
+zero identificando as seguintes informações: origem, destino ,fluxo, tipo de 
+fluxo (local, dominante ou outro),coordenadas da origem e do destino, distância 
+percorrida e os totais de ocorrências na origem e no destino.</P>
+
+<P>Com êste arquivo, vai ser possível plotar, sobre um mapa base, uma camada com as 
+setas que representam o fluxo, e com a possibilidade de representar a 
+intensidade do fluxo como largura da seta. Para ativar esta camada basta clicar 
+no botão identificado por uma seta vermelha e fornecer as informações na janela 
+de diálogo que vai se abrir.</P>
+
+<P>Adicionalmente, é possível plotar, para cada ponto de destino, um 
+gráfico de setores no qual podemos visualizar a proporção de eventos 
+originados de outra áreas em relação ao gerados na própria área.</P>
+
+<P>Para que a tabulação gerada possa ser transformada em uma tabela de fluxo alguns 
+cuidados devem ser tomados:</P>
+
+<ul>
+<LI><P>É preciso antes tabular nas linhas a localização da origem e nas colunas a 
+localização de destino.</P></LI>
+
+<LI><P>Os códigos de origem e destino devem aparecer nos títulos das linhas e das 
+coluna e devem ser os mesmos que identificam as áreas do mapa associado.</P></LI>
+
+</ul>
+<P>ATENÇÃO: Uma tabela com 6000 linhas e 6000 colunas contém 
+36.000.000 de células. Não tem sentido salvar esta tabela que o TabWin não vai 
+conseguir ler. A única forma de aproveitá-la e gerando uma tabela de fluxo.  </P>
+
+<hr>
+
+<H2><A NAME="wine">Executando o TabWin sob Wine Linux</A></H2>
+
+<P>Wine é uma implementação OpenSource da API do windows sob X e Unix. 
+Wine deve ser visto como uma camada de compatibilização com Windows 
+que implementa uma API alternativa inteiramente independente Microsoft.</P>
+
+<P>Wine permite executar programas de Windows em Linux, FreeBSD e Solaris.</P>
+
+<P>Mais informações e o download da última versão do Wine pode ser obtido na 
+<A HREF="http://www.winehq.org" target="_blank">Página Oficial do WINE</A>.</P>
+
+<P>O TabWin32 funciona debaixo de Wine e a instalação pode ser feita tomando as 
+seguintes providências:</P> 
+
+<UL>
+
+<P><LI>Criar um diretório "tabwin" dentro do "C_DRIVE" do wine e copiar os 
+arquivos do TabWin para dentro dele.</LI></P>
+
+<P><LI>Associar a extensão .tab ao comando "wine tabwin32.exe".</LI></P>
+
+<LI><P>Expandir o arquivo WebHelp.zip dentro do diretório de instalação do 
+TabWin. Assim,o help a ser utilizado debaixo de wine, estará no formato HTML e 
+estará no arquivo "WebHelp/tabwin32.htm";</P></LI>
+
+<LI><P>Se o Linux instalado não tiver a FONT Courier New, que o TabWin usa 
+como padrão de fonte fixa, usar o menu "Editar/Escolhe font fixa"
+para escolher uma fonte monoespaçada necessária em várias janelas.</P></LI>
+
+<LI><P>Para ganhar mais desempenho em qualquer aplicação, compile o Wine sem a 
+opção "debug".</P></LI>
+ 
+</UL>
+<HR>
+</body>
+</html>

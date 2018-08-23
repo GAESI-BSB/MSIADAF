@@ -1,0 +1,271 @@
+
+<html><body>
+<h3 align="center">Tabelas de Conversão de Códigos</h3>
+
+<blockquote>
+  <p>Os dados dos arquivos que constituem os sistemas de informações do SUS estão
+  normalmente codificados em números que representam códigos constantes de tabelas
+  padronizadas, como Classificação Internacional de Doenças (CID), Tabela de
+  Procedimentos de AIHs ou SIA-SUS, Código de Municípios do IBGE etc. É conveniente que
+  tais códigos sejam traduzidos, tornando-os facilmente compreensíveis, exibindo a sua
+  correspondente descrição. </p>
+  <p>Adicionalmente, é necessário produzir tabulações que agregam vários códigos
+  dessas tabelas em uma única categoria para permitir a análise dos dados. </p>
+  <p>Para resolver estas duas situações, são usadas Tabelas de Conversão de Códigos,
+  constituídas de arquivos tipo texto, com uma estrutura estabelecida para permitir que
+  qualquer usuário, com um editor de texto, modifique as tabelas existentes ou crie novas
+  tabelas necessárias à sua pesquisa. </p>
+  <p>Os tabelas são iguais para as variáveis de linhas, de colunas ou de seleção. Ao
+  contrário do TAB e do TABWIN, as variáveis de coluna podem ter, também, até 50
+  posições de descrição; recomenda-se, porém, utilizar descrições mais curtas para
+  tornar as tabulações de mais fácil leitura. </p>
+  <p>No caso de variáveis de seleção, as tabelas de conversão se destinam a relacionar
+  que valor ou valores, correspondentes a cada descrição, podem ser marcados para serem
+  aceitos na variável especificada para que cada registro seja considerado no
+  processamento. </p>
+  <p>Para criar uma Tabela de Conversão de Código, é necessário criar um arquivo texto
+  que, em sua primeira linha, tenha o número de categorias que resultará da conversão dos
+  códigos, ou seja o número de linhas ou colunas que serão obtidos na tabulação e o
+  número de caracteres que serão considerados para comparação no campo do arquivo de
+  dados. </p>
+  <p>Exemplo: </p>
+  <pre>
+5 4
+</pre>
+  <p>Aqui, a variável tem 5 categorias e o código tem 4 posições, a partir da posição
+  indicada em CAMPO4 nos registros de tipo S, L, C, D, T ou X. </p>
+  <p>As demais linhas têm formato fixo, devendo ocorrer pelo menos uma vez para cada
+  categoria, e tem sempre três campos que ocupam posições fixas, no formato abaixo: <ul>
+    <li>Seqüencial da categoria - numérico, alinhado à direita, colunas 4 a 7 </li>
+    <li>Descrição - texto, alinhado à esquerda, colunas 10 a 59 </li>
+    <li>Lista de Códigos - alfanumérico, da coluna 61 em diante </li>
+  </ul>
+  <p><b>Seqüencial da Categoria - colunas 4 a 7</b> </p>
+  <p>O Seqüencial da Categoria a que a descrição e a lista de códigos se referem é
+  campo obrigatório e indica também a posição relativa que esta linha ocupará na
+  seqüência de linhas, colunas ou quadros da tabulação gerada. </p>
+  <p><b>Descrição - colunas 10 a 59</b> </p>
+  <p>A descrição contém, alinhado à esquerda, o texto que será exibido nas opções e
+  na geração da tabulação. </p>
+  <p><b>Lista de Códigos - colunas 61 até o fim da linha</b> </p>
+  <p>A lista de valores contém, separados por vírgulas, a relação dos códigos da
+  variável, no arquivo de entrada, que serão considerados nesta linha da tabela. Vários códigos consecutivos
+  poderão ter seu registro simplificado anotando-se o primeiro valor separado do final por
+  um hífen. A cada referência a um valor, deverá ser utilizado o número de caracteres
+  definidos na primeira linha deste arquivo e, caso o valor seja menor, deve-se utilizar a
+  quantidade necessária de zeros a esquerda para completar o comprimento. </p>
+  <p>Se o espaço de uma linha (até 255 caracteres) for insuficiente para relacionar todos
+  os códigos desta categoria, podemos criar uma nova linha, repetindo o mesmo seqüencial
+  de categoria, dando, então, continuidade à lista de códigos na coluna 61. </p>
+  <p>As linhas não precisam estar codificadas na mesma seqüência das categorias. Assim, a
+  última categoria pode estar antes das demais. Isto é particularmente útil para definir
+  a categoria &quot;Ignorado&quot;, como poderemos ver nos exemplos adiante. </p>
+  <p>Todo o texto que estiver após o caractere ';' é ignorado pelo programa e funciona
+  apenas como comentário com a finalidade de documentar a tabela de conversão. </p>
+  <p>Exemplo do arquivo CAUSACAP.CNV: </p>
+  <pre>
+17 3
+;
+; Tabela para converter CID 9 a 3 dígitos em Capítulos
+;
+      1  I. Doenças infecciosas e parasitárias              001-139
+      2  II. Neoplasmas                                     140-239
+      3  III. D glând endoc nutric metab e transt imunitar  240-279
+      4  IV. Doenças do sangue e órgãos hematopoéticos      280-289
+      5  V. Transtornos mentais                             290-319
+      6  VI. Doenças do sist nervoso e dos órg sentidos     320-389
+      7  VII. Doenças do aparelho circulatório              390-459
+      8  VIII.Doenças do aparelho respiratório              460-519
+      9  IX. Doenças do aparelho digestivo                  520-579
+     10  X. Doenças do aparelho geniturinário               580-629
+     11  XI. Complicações da gravidez parto e puerpério     630-676
+     12  XII. Doenças da pele e tecido celular subcutâneo   680-709
+     13  XIII.Doenças sist osteomuscular e tec conjuntivo   710-739
+     14  XIV. Anomalias congênitas                          740-759
+     15  XV. Algumas afecções origin no período perinatal   760-779
+     16  XVI. Sintomas sinais e afecções mal definidas      780-799
+     17  XVII.Causas externas                               800-999
+</pre>
+  <p>Neste exemplo, temos uma tabela para converter os códigos da Classificação
+  Internacional de Doenças (CID), 9ª Revisão, em seu capítulos. Como os capítulos são
+  17, o número de categorias expresso na primeira linha é 17 e, como são utilizados
+  apenas 3 dígitos, o número 3 aparece na segunda posição na primeira linha. </p>
+  <p>Exemplo do arquivo MESES.CNV: </p>
+  <pre>
+13 2
+; Tabela de conversão para os meses do ano     
+     13  Ignorado                                           00-99 ; ignorados
+      1  Janeiro                                            01
+      2  Fevereiro                                          02
+      3  Março                                              03
+      4  Abril                                              04
+      5  Maio                                               05
+      6  Junho                                              06
+      7  Julho                                              07
+      8  Agosto                                             08
+      9  Setembro                                           09
+     10  Outubro                                            10
+     11  Novembro                                           11
+     12  Dezembro                                           12
+</pre>
+  <p>Esta definição contém 13 categorias e o comprimento considerado da variável no
+  arquivo de entrada é de 2 dígitos. Observe-se que, primeiro, definiu-se a categoria
+  &quot;Ignorado&quot;, com valores de 00 a 99, e, após, as categorias válidas. O código
+  01 é, primeiro considerado como ignorado. Como, porém, está relacionado, depois, à
+  categoria &quot;Janeiro&quot;, esta prevalece, por aparecer por último. </p>
+  <p><b>Variável Curta e Variável Longa</b> </p>
+  <p>De acordo com o número de dígitos com que cada variável será considerada no arquivo
+  .CNV, duas formas de indexação diferentes serão adotadas com impacto no tempo de
+  processamento. </p>
+  <p>No caso de usarmos códigos de até quatro dígitos, sendo que somente o primeiro pode
+  ser alfabético, será usada internamente uma indexação imediata, através de um vetor
+  de conversão, que resulta em processamento mais rápido. Dentro desse limite de quatro
+  dígitos, é possível aceitar códigos em que o primeiro caractere do campo de entrada
+  seja uma letra de A a Z, maiúscula ou minúscula. Como as letras de A até J são
+  mapeados sobre os dígitos de 0 a 9, é possível aceitar códigos que usem letras ou
+  números na primeira posição mas não ambos. </p>
+  <p>No caso do código exceder a quatro dígitos, o mesmo será tratado internamente como
+  literal, sendo necessária, para sua identificação, uma pesquisa binária nos códigos
+  armazenados na memória, o que, naturalmente, resulta em processamento mais lento.</p>
+  <p>Eventualmente, pode ser necessário tratar como literais códigos menores do que quatro
+  caracteres como, por exemplo, ao usarmos as siglas das Unidades da Federação, onde temos
+  apenas dois caracteres, ambos alfabéticos e em letra maiúscula. Nesse caso, na primeira
+  linha útil do .CNV, após o espaço que segue comprimento do código, colocamos a letra
+  L. </p>
+  <p>Exemplo: </p>
+  <pre>
+5 2 L
+; Regiões do Brasil a partir das siglas das UFs
+      1  Norte                                               AM,PA,AC,RO,RR,AP
+      1  Norte                                               TO
+      2  Nordeste                                            MA,PI,CE,RN,PB,AL
+      2  Nordeste                                            PE,SE,BA
+      3  Centro-Oeste                                        GO,MT,MS,DF
+      4  Sudeste                                             MG,SP,RJ,ES
+      5  Sul                                                 RS,PR,SC
+</pre>
+  <p>Vemos, no exemplo, duas linhas com o mesmo seqüencial da categoria, utilizado quando a
+  lista de códigos não couber numa linha apenas, ou se quisermos separá-las para tornar o
+  arquivo mais legível. </p>
+  <p>No caso de usarmos um arquivo .DBF para indexação, o código será sempre tratado
+  como literal, independentemente do comprimento do campo. </p>
+  <p><b>Linhas de Subtotal</b> </p>
+  <p>Em algumas ocasiões, é necessário apresentar tabulações em que algumas linhas são
+  subtotais resultantes da soma parcial de outras linhas do relatório. Podemos utilizar, na
+  tabela de conversão de código (.CNV), o campo Indicador de Subtotal, numérico alinhado
+  à direita nas colunas de 1 a 3, que somente é interpretado para uma tabela de conversão
+  quando a mesma é usada nas linhas. </p>
+  <p>A ocorrência de qualquer número de linha válido nesta posição vai determinar que,
+  durante a geração da tabulação, o conteúdo desta linha seja adicionado ao da linha
+  cujo número está aqui indicada, permitindo que aquela contenha, adicionado ao valor nela
+  diretamente tabulado, a soma dos valores tabulados de todas as linhas que apontam para
+  ela. </p>
+  <p>Estas posições (colunas 1 a 3) devem ser deixadas em branco no caso da tabela de
+  conversão não incluir linhas de subtotal, o que é o mais comum. </p>
+  <p>Exemplo de .CNV com linhas de subtotal: </p>
+  <pre>
+12 2
+;
+; Natureza do prestador
+;
+      1 Público                                             10,30,40,50
+  1   2 . Próprio                                           10
+  1   3 . Federal                                           30
+  1   4 . Estadual                                          40
+  1   5 . Municipal                                         50
+      6 Privado                                             20,60,80
+  6   7 . Contratado                                        20
+  6   8 . Filantrópico                                      60
+  6   9 . Sindicato                                         80
+     10 Universitário                                       70,90
+ 10  11 . Universitário                                     70
+ 10  12 . Pesquisas                                         90
+</pre>
+  <p>No exemplo acima, cada linha da tabela que é uma subcategoria aponta, nas posições 1
+  a 3, para a linha de subtotal a que pertence. </p>
+  <p>Não é obrigatório que sejam relacionadas todas as subcategorias possíveis. No
+  exemplo acima, se tivesse sido omitida a subcategoria 12, a categoria 10 continuaria a
+  apresentar a soma dos códigos 70 e 90. </p>
+  <p>Como, por definição, os <i>browsers</i> interpretam o HTML substituindo espaços em
+  branco seguidos por apenas um espaço em branco, é conveniente marcar a indentação com
+  um caractere qualquer. No exemplo acima, utilizou-se o ponto. </p>
+  <p>No caso de estarmos usando variáveis longas ou literais, devido ao fato do primeiro
+  código encontrado entrar no índice em lugar dos seguintes, devemos colocar na linha de
+  subtotal um código que não apareça nas linhas de detalhe, ou colocar a linha de
+  subtotal após a linha de detalhe. </p>
+  <p>Exemplo de UF e Região: </p>
+  <pre>
+32 2 L
+;
+; UF e Região
+;
+      1 Norte                                               XX
+  1   2 . Rondônia                                          RO
+  1   3 . Acre                                              AC
+  1   4 . Amazonas                                          AM
+  1   5 . Roraima                                           RR
+  1   6 . Pará                                              PA
+  1   7 . Amapá                                             AP
+  1   8 . Tocantins                                         TO
+      9 Nordeste                                            XX
+  9  10 . Maranhão                                          MA
+  9  11 . Piauí                                             PI
+  9  12 . Ceará                                             CE
+  9  13 . Rio Grande do Norte                               RN
+  9  14 . Paraíba                                           PB
+  9  15 . Pernambuco                                        PE
+  9  16 . Alagoas                                           AL
+  9  17 . Sergipe                                           SE
+  9  18 . Bahia                                             BA
+     19 Sudeste                                             XX
+ 19  20 . Minas Gerais                                      MG
+ 19  21 . Espírito Santo                                    ES
+ 19  22 . Rio de Janeiro                                    RJ
+ 19  23 . São Paulo                                         SP
+     24 Sul                                                 XX
+ 24  25 . Paraná                                            PR
+ 24  26 . Santa Catarina                                    SC
+ 24  27 . Rio Grande do Sul                                 RS
+     28 Centro-Oeste                                        XX
+ 28  29 . Mato Grosso do Sul                                MS
+ 28  30 . Mato Grosso                                       MT
+ 28  31 . Goiás                                             GO
+ 28  31 . Distrito Federal                                  DF
+
+</pre>
+
+<p><b>Faixas de Valor</b></p>
+
+<p>Quando for necessário criar categorias a partir de faixas de valor de 
+variáveis contínuas, acrescentamos à primeira linha do arquivo CNV, 
+imediatamente após o comprimento do campo de código, a letra F, de Faixas, e 
+colocamos no campo de código, alinhados pela direita, os limites superiores de 
+cada faixa. O separador decimal deve ser o "ponto".</p>
+
+<p>Exemplo de arquivo CNV com faixas de valor</p>
+<pre>
+; Faixas de Valor das AIHs
+6 14 Faixas
+      1  Até 99,99                                                   99.99
+      2  100,00 a 499,99                                            499.99
+      3  500,00 a 999,99                                            999.99
+      4  1000,00 a 2499,99                                         2499.99
+      5  2500,00 a 4999,99                                         4999.99
+      6  >= 5000,00                                         99999999999.99
+
+</pre>
+
+
+</blockquote>
+
+<hr>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="20%"><a href="tabinst.htm"><img src="/gifs/setae.gif" border="0" WIDTH="37" HEIGHT="27"></a> </td>
+    <td align="center" width="60%"><a href="/principal.htm"><img src="/gifs/homepage.gif" alt="Datasus" border="0" WIDTH="138" HEIGHT="28"></a> </td>
+    <td align="right" width="20%"><a href="tabinst07.htm"><img src="/gifs/setad.gif" border="0" WIDTH="37" HEIGHT="27"></a> </td>
+  </tr>
+</table>
+</body>
+</html>

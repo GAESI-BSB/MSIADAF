@@ -1,0 +1,22 @@
+ Produção Ambulatorial do SUS - Brasil - por local de atendimento
+Qtd.aprovadaValor aprovadoQtd.apresentadaValor apresentadoDiferença de valorValor do complemento federalValor do complemento do gestorValor do incremento por Região
+Período:Jan/2008-Jun/2018
+"Região";"Qtd.aprovada";"Valor_aprovado";"Qtd.apresentada";"Valor_apresentado";"Diferença_de_valor";"Valor_do_complemento_federal";"Valor_do_complemento_do_gestor";"Valor_do_incremento"
+"1 Região Norte";2899380614;10424735720,85;3143864577;12167900831,65;12713845,50;805225,51;124422151,34;34073314,85
+"2 Região Nordeste";8982718341;38883563677,29;9700619508;43821067135,70;130381066,69;3775004,00;887017200,66;145309211,62
+"3 Região Sudeste";18413497643;82385799553,50;19160797676;87429037076,93;70318190,68;16293633,53;647952828,14;317902985,91
+"4 Região Sul";5517058070;25924261229,76;5886903001;27913119833,01;22984343,71;4393318,13;280357820,66;90356213,16
+"5 Região Centro-Oeste";2721792038;12357822112,94;2904700832;13634243249,42;112069039,27;2277915,94;194904199,54;45255717,02
+"0 Ignorado/Exterior";211948;377094,09;216597;384659,84;-;-;-;-
+"Total";38534658654;169976559388,43;40797102191;184965752786,55;348466485,85;27545097,11;2134654200,34;632897442,56
+ Fonte: Ministério da Saúde - Sistema de Informações Ambulatoriais do SUS (SIA/SUS)
+ Notas:
+ 
+ Dados referentes aos últimos seis meses, sujeitos a  atualização.
+ A partir do processamento de junho de 2012, houve mudança na classificação da natureza e esfera dos estabelecimentos. Com isso, temos que:
+      
+      Até maio de 2012 estas informações estão disponíveis como "Natureza" e "Esfera Administrativa".
+      De junho de 2012 a outubro de 2015, estão disponíveis tanto como "Natureza" e "Esfera Administrativa", como "Natureza Jurídica" e "Esfera Jurídica".
+      A partir de novembro de 2015, estão disponíveis como "Natureza Jurídica" e "Esfera Jurídica".
+      
+ 

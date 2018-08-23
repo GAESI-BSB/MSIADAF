@@ -119,3 +119,6 @@ datasets/*
 .ipynb_*/**
 .ipynb_*/*
 .ipynb_*
+
+.DS_Store
+.idea

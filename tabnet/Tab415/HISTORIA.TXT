@@ -1,0 +1,997 @@
+
+HISTÓRICO DAS ALTERAÇÕES DO TABWIN
+__________________________________
+
+Versão 4.1.5 em agosto de 2018
+
+  Implementado formato KML (camada do Google Maps) para exportação de mapas
+  ao se selecionar a opção "Arquivo / Exportar mapa base" na janela "Mapas".  
+
+Versão 4.1.4 em julho de 2017
+
+  Correção de erro ao se selecionar, através do botão de navegação, um diretório
+  de dados distinto do diretório onde foi aberto o arquivo DEF. 
+
+Versão 4.1.3 em maio de 2016
+
+  Corrigido o erro ao se tentar executar um novo mapa sem encerrar o anterior
+  pelo botão de saír.
+
+  Corrigida a mensagem de erro ao se clicar na opção "Associar Extensão .TAB"
+
+  Modificada a tela de escolha de Diretório de Arquivos de Dados.
+
+Versão 4.1.2 em outubro de 2015
+
+  Retirada a opção do menu de Baixar Arquivos via FTP
+
+Versão 4.1.1 em outubro de 2015
+
+  Implementado filtro de verificação do resultado de busca de arquivos com
+  caracteres "?" e "*"
+
+Versão 4.1 em setembro de 2015
+
+  Eliminada a indexação de arquivos para corrigir falha de carregamento de itens
+
+Versão 4.0 em fevereiro de 2014
+
+  Aumentada a largura dos itens do Incremento de 18 para 30 posições
+
+Versão 3.7c em fevereiro de 2013
+
+  Aumentado o número de entradas na função de indexação de arquivos de 8192 para
+  20.000
+
+Versão 3.7b em outubro de 2012
+
+  Corrigida a rotina de impressão no caso da largura do papel ser insuficiente para
+  a impressão da primeira coluna.
+
+Versão 3.7a em janeiro de 2011
+
+  Implementado o tratamento de CNV com novo formato (4 posições para SubTotal e
+  100 posições de descrição).
+  OBS: para que o novo formato seja lido corretamente pelo TabWin é necessário
+  colocar-se a letra "N" na primeira posição da primeira linha do arquivo CNV. 
+
+Versão 3.6a em fevereiro de 2010
+
+  Corrigido o problema de execução de recuperação de painel logo após uma execução
+  de tabulação através da inibição do botão até que a tabela seja salva como
+  arquivo ".tab"
+
+
+Versão 3.6 em outubro de 2009
+
+Implementado no painel de controle de tabulação um botão de navegação que
+permite a escolha do diretório onde se localizam os arquivos a serem tabulados.
+
+Implementado na janela de Log um botão que permite abrir o painel de controle
+de tabulação com as mesmas seleções da tabulação em uso. Esta opção permite,
+a partir de um arquivo '.tab", recuperar todas as seleções que foram utilizadas
+na sua tabulação, de modo a permitir a repetição da tabulação original com
+possíveis atualizações nos seus dados.
+
+Implementado na geração de SQL:
+
+  - Campos no DBF de saída começados com "VL_" são criados como numéricos (N) 
+  com duas decimais para representar valores monetários.
+  
+Implementado no painel de controle da tabulação:
+
+  - Número maximo de arquivos na lista passou de 5000 para 8192.
+  
+Corrigida, na janela principal, a operação de inclusão de tabela, que passa a criar 
+um arquivo temporário no diretório temporário do Windows e não mais no próprio 
+diretório do Windows. Isso corrige a mensagem que avisava que o usuário não 
+tinha permissão de gravação caso não tivesse o privilégio de administrador.
+
+
+Versão 3.5 em 26 de março de 2007
+
+Implementado na conexão com R:
+  
+  - O programa agora procura o R primeiro em um diretório {TABWIN}\R\Bin 
+    e, não encontrando, procura a instalação do R no Registry do Windows. 
+    Esta opção se destina a permitir a distribuição do R pré-instalado no 
+    mesmo ZIP do TabWIn.
+    
+  - A execução dos scripts de R agora se dá no diretório TEMP do Windows 
+    o que vai acelerar a execução a partir de PenDrive e viabilizar a 
+    partir de CD.
+    
+Implementado na janela Mapa:
+  
+  - Implementada a gravação do mapa no formato Windows MetaFile (WMF). A 
+    opção é ativada pelo ícone do "diskete" no painel de ferramentas ou 
+    pelo menu "Arquivo" da janela Mapa. A escala de cores fica em um 
+    metafile separado, com o mesmo nome do arquivo principal porém 
+    terminando em "_esc.wmf". Assim, "meumapa.wmf" terá a escala em 
+    "meumapa_esc.wmf".
+
+  - O barra de título (Caption) da janela agora dá a dimensão em pixels 
+    da área da imagem de forma a poder antecipar o tamanho do .BMP a ser 
+    gravado ou copiado para o ClipBoard.
+    
+Exportação do quadro em formato .XLS adota agora o formato do Excel97.          
+
+Corrigido bug que incluia na base do .BMP salvo do mapa 7 pixels que 
+pertenciam a barra de status.  
+
+
+Versão 3.4 em 3 de fevereiro de 2006
+
+Implementado na janela Mapa:
+
+  - Paleta em tons de cinza para facilitar a publicação do mapa.
+  
+  - Botão de escolha de cor para o gráfico de setas de fluxo.
+  
+  - Ao clicar com o botão direito sobre um objeto do mapa base, o 
+    TabWin mostra os valores para cada uma das 15 primeras colunas
+    do quadro.
+    
+  - Ao clicar com o botão direito sobre pontos ou círculos gerados 
+    gerados como camada a partir de um DBF, o TabWin mostra os valores 
+    das 15 primeiras colunas do DBF relativos aquele ponto. Observe que, 
+    se várias camadas de pontos foram adicionadas ao mapa, este 
+    procedimeto vai recuperar somente a última camada representada 
+    naquele pixel.
+      
+  - Ao clicar com o botão direito sobre uma seta de fluxo o TabWin 
+    mostra origem, destino e demais valores relativos aquela seta.
+    
+Implementado na janela de adição de camadas no mapa:
+
+  - Opção para controlar a largura da linha com que a camada é 
+    desenhada.        
+  
+Implementado do Construtor Visual de Consultas:
+
+  - Melhor estruturação do código SQL gerado para facilitar a leitura 
+    e posterior edição do mesmo.
+    
+Implementado na Janela pricipal:
+
+  - Número máximo de linhas passou de 120.000 para 199.000.  
+    
+O nomes das colunas em um DBF usado para tabulação podem agora usar 
+letras minúsculas.
+
+Implementado na janela de tabulação:
+
+  - Número máximo de opções de incremento passou para 255.             
+
+
+Versão 3.3 em 25/07/2005
+
+Implementada na janela principal:
+
+ - Salvar o quadro como CNV coloca o código na frente da descrição de 
+   acordo com a opção "Quadro/Esconder Chave".
+   
+ - Importar mapa no formato Map Maper Export(.MME).
+ 
+ - Nova Operação para "Normalizar" os valores de uma lista de colunas.
+ 
+ - Número máximo de linhas passou de 100.000 para 120.000.
+
+Implementada na janela Mapa:
+
+ - A funçao Exportar Mapa Base agora permite o formato Map Maker 
+   Export(.MME).
+   
+ - Implementada a possibilidade de utilizar arquivos contendo 
+   "waypoints" de GPS, no formato GPX, diretamente como camadas de um 
+   mapa.     
+
+Implementada, na execução de lotes de consulta SQL:
+
+ - substituição de parametros escritos entre "<" e ">" a cada linha de 
+   consulta.
+
+   A substituição deve ser expressa, no próprio arquivo de lote, antes 
+   da linha da consulta a ser modificada, na forma "Nome=Valor", na 
+   qual o texto "<Nome>" é substituida pelo texto "Valor" a cada 
+   ocorrência.  Se for usada a opção "Informe Nome", o programa vai 
+   abrir uma janela de diálogo e pedir ao usuário o Valor para 
+   substituir o texto "<Nome>".
+
+ - Implementado o comando "CONECTA Nome-do-Banco-de-dados" com o 
+   objetivo de abrir o banco de dados antes de executar uma consulta. 
+   É util somente com consultas salvas com o nome do banco EM BRANCO, 
+   exatamente para serem usadas, sem modificação, com vários bancos de 
+   dados.
+
+Implementada da Janela de Fluxos:
+ 
+ - Opção de mostrar, para cada ponto de destino, um gráfico de
+   setores com a proporção dos eventos de origem externa em relação 
+   aos eventos gerados na própria área.
+   
+Implementada na Janela de tabulação:
+
+ - Número de incrementos passou de 50 a 150;
+ 
+ - Número de seleções ativas passou de 30 a 50.
+ 
+Implementada na janela dos esquemas de análise:
+
+ - Botão que permite carregar no quadro do TabWin dados de exemplo para serem 
+   usados junto com o esquema. 
+      
+Corrigido bug que fazia a salva de uma consulta SQL na forma de script de R 
+gerar código incorreto.
+
+Corrigido bug que fazia os arquivos de help do arquivo DEF, com 
+extensão .HLP em letras maiúsculas, não serem mostrados.
+      
+
+Versão 3.2 em 4 de abril de 2005
+
+Criada, na janela Query: 
+ - Colorização de sintaxe para SQL ajustada ao "dialeto";
+ - Indicação de existência de indices para a tabela selecionada;
+ - Opção CNV só aparece quando o dialeto suporta "case";
+ - Drag da lista de colunas para lista de tabelas gera SQL com o link;
+ - Construtor visual de consultas (CVC) que permite arrastar e escolher
+   as tabelas, contruir visualmente os links e selecionar os campos
+   para a geração do SQL;
+ - Possibilidade de editar Bancos de Dados "STANDARD" tanto 
+   na janela "Visualiza dados" quanto através de comandos SQL;    
+
+Criada na janela de "Mostra DBF":
+ - Opção de gerar arquivo CNV usando as 2 primeiras colunas do DBF.
+   A coluna de largura maior é considerada descrição.
+ - Botão para abrir o DBF dentro de uma seção do R.
+ - Opção de menu "Análise com R" sobre o DBF.
+ - Fechamento do Form provoca fechamento do DBF.  
+
+Criada, na janela "Mapa" o botão de exportação tabela para o
+  - "Terraview". Necessita TerraView instalado com projeto sobre a
+    mesma área geográfica. (Os projetos relativos a cada UF podem ser
+    obtidos no site do TerraView);  
+   
+Criada, na janela CNV:
+  - Opção de gerar SQL para Seleção;
+
+Criada, na janela Cria Script R,
+ - barra de status com posição do cursor.
+ - colorização de sintaxe para XML;
+
+Reformulada janela "Editar arquivo DEF ou CNV":
+ - barra de status com posição do cursor;
+ - Refeita a geração automática de DEF para perguntar qual o CNV
+   a ser associado para cada campo;  
+ - Barra de Ferramentas com botão "Full Screen";
+ - Botões para alternar entre vários códigos por linha de descrição
+   e apenas um código por linha.
+ - Menu principal com 
+    - Arquivo
+    - Ajuda 
+    - Opções (Seleção modo coluna e Mostra caracteres especiais)
+    - Ferramentas
+    - Editar (Maiúsculas, Minúsculas e Nomes Próprios)   
+
+Mudou o conceito e o item de menu: Converte acentos de DBF agora se 
+chama  "DBF com acentuação para DOS" e somente é necessário quando o 
+DBF não contiver página de código. A marca de página de código 2 
+(FoxPro CP850) ou 37 (BDE PtBR CP850) são sempre mostradas de forma 
+correta.    
+ 
+Help do DEF (janela de tabulação) agora pode ser em html; 
+
+
+Versão 3.1 em 10 de novembro de 2004
+
+Criada, na janela de mapa, a opção de menu "Arquivo/Gravar tabela de fluxo" que 
+permite gravar um DBF com os fluxos origem e destino dos eventos na tabela sendo 
+mapeada. Para tal é preciso tabular nas linhas a localização da origem e nas 
+colunas a localização de destino. Os códigos de origem e destino devem ser os 
+mesmos que identificam as áreas do mapa associado. Para viabilizar uma matriz de 
+fluxos a nivel nacional, o número de colunas foi ampliado para 6.000. ATENÇÃO: 
+Uma tabela com 6000 linhas e 6000 colunas contém 36.000.000 de células. Não tem 
+sentido salvar esta tabela que o TabWin não vai conseguir ler. A única forma de 
+aproveitá-la e gerando uma tabela de fluxo.  
+
+Criado, na janela de mapa, o botão identificado por uma seta vermelha, e que se 
+destina a adicionar, a um mapa base, uma camada de setas de fluxo cujas 
+coordenadas estão em um DBF gerado pela opção de menu "Arquivo/Gravar tabela de 
+fluxo". 
+
+Criado, no janela SQL, botão "cnv" para gerar código SQL a partir de de um 
+arquivo CNV. A execução do código gerado, que será diferente para linhas ou 
+colunas,  depende da implementação da instrução "case" no gerenciador de banco 
+de dados em uso. Isto inclue Oracle, a partir do versão 8i, Firebird a partir da 
+versão 1.5, PostGres e Mysql.
+
+Criado, na janela SQL, o botão "BDE", que permite ativar o Borland 
+Database Engine(BDE) de dentro do TabWin para criar, adicionar, editar 
+e excluir bancos de dados não STANDARD. Este botão facilita o acesso 
+ao BDE para uso de bancos diferentes de Paradox, dBase e FoxPro que 
+são criados e removidos diretamente pelos botões "Adicionar e 
+remover".
+
+Criado, na janela SQL, o botão "Lote" que permite executar um lote de consultas 
+SQL que salva os resultados em DBF. O arquivo de lote, com extensão ".txt", deve 
+conter, em cada linha, separados por vírgula, o nome da consulta sql e nome do 
+arquivo DBF que vai armazenar o resultado da consulta. Opcionalmente, a linha 
+pode conter, ainda, o valor do parâmetro associado a consulta.
+
+Criado diálogo para configurar atributos da coluna (Cabeçalho, 
+Largura, Decimais e Tipo de total) que é ativado ao clicar com o botão 
+direito do mouse sobre o cabeçalho da coluna.
+
+Foram colocados campos de edição para Título, Subtítulo e Rodapé na 
+janela do quadro para facilitar a visão e edição dos mesmos.
+
+Devido ao item anterior não é mais possível copiar e/ou colar o quadro 
+inteiro para e do clipboard usando os atalhos Ctrl+C e Ctrl+v. Agora é 
+necessário usar as opções do menú "Editar" ou ativar os botões 
+correspondentes na barra de ferramentas.  
+
+Checkbox na tela de log permite desabilitar a visualização automática na 
+abertura do quadro.
+
+Criado, na barra de ferramentas, um botão para abrir o quadro atual, 
+convertido para HTML, no browser padrão.
+
+Refeita a salva de arquivo no formato XLS (Excel) para preservar a largura das 
+colunas e a formatação dos valores numéricos.
+
+Criado, na barra de ferramentas, um botão para abrir o quadro atual dentro da 
+planilha padrão. A que é registrada para abrir a extensão ".XLS".
+
+Criada, no DEF, o comando R, para incuir um texto de rodapé nas 
+tabelas geradas. Pode ser usado para identificar a fonte dos dados. Se 
+a palavra "período" constar do texto do rodapé, os períodos, 
+identificados a partir do nome dos arquivos tabulados, vão ser 
+acrescentados ao final do texto. 
+
+Importação de mapa em SHP permite extrair o código de dentro do campo nome.
+
+O função appenda, da LEDBF32, atualiza número de registros do header do DBF cada 
+registro gravado. Assim, mesmo que venhamos a cancelar a operação de adicionar 
+registros ou salvar uma consulta SQL, os registros adicionados até o momento são 
+recuperáveis.
+
+O nome do Banco de Dados foi incluído no rodapé do quadro gerado na Consulta SQL 
+junto com Data e Hora da execução.
+
+A posição e dimensões do form Gráfico do R e do form de Consulta SQL 
+tem seus parâmetros salvos no tabwin.ini e permanecem na próxima 
+execução do TabWin. A opção "stretch" do Gráfico do R também é salva.
+
+A lista de bancos de dados no formulário de consulta SQL agora fica em 
+ordem alfabética. 
+
+As nomes das colunas que contém as coordenadas de uma camada de pontos 
+em DBF a ser adicionada a um mapa podem ser também X e Y além de 
+"longitude" e "latitude" já suportada anteriormente.
+
+Corrigido bug que impedia que tabelas abertas de CDROM pudessem ser copiadas 
+para o clipboard ou transpostas. Assim a criação de arquivos temporários passa 
+ser feita no diretório temporário do Windows e não mais no diretório corrente.
+
+Corrigido bug que fazia com que a movimentação de colunas com o mouse fosse 
+sempre precedida de uma ordenação do quadro pela coluna de origem.
+
+
+Versão 3.0.1 Beta  em 8 de junho de 2004
+
+Implementada opção para trocar as linhas pelas colunas no quadro 
+atual. Após a transposição todas as colunas ficam o mesmo número de 
+casas decimais.
+
+Implementada opção de passar na linha de comando o nome de arquivo com 
+extensão SQL. A query é executada na inicialização do TabWin e aparece 
+já carregada no quadro.
+
+Implementada opção para plotar o nome do ponto ao adicionar no mapa 
+uma camada de pontos em DBF, desde que o campo "NOME" esteja presente 
+do DBF.
+
+Implementada opção de ativar uma consulta SQL a partir da janela de tabulação 
+para atualizar os dados do DBF. Basta colocar o nome da consulta na linha do 
+comando "A" do DEF, após a especififcação do arquivo e separado por uma vírgula.   
+
+Eliminado erro "Capability not suported" ao salvar Consulta SQL em DBF quando o 
+Bando de Dados fosse MS ACCESS.
+
+Corrigido bug na carga da lista de consultas SQL.
+
+Versão 3.0 Beta em 7 de maio de 2003
+
+Implementado a interface com bancos de dados SQL, criada interface para 
+execução esquemas de análise com R além da importação de dados em XML.
+
+Os detalhes dessas novas funcionalidades podem ser estudadas pelo menu 
+"Ajuda/Novidades da versão 3.0"  
+
+Os limites para o quadro passam a ser os seguintes:
+Linhas  = 100.000
+Colunas = 512 
+
+Rodapé da janela principal agora com status bar e hint para nome de arquivo muito grande.
+
+Implementada status bar na janela de tabulação e de mapa na qual agora passam a 
+ser visualizadas o nome da área e o valor plotado. 
+
+Implementada opção de visualizar e editar o log da tabulação no menu "Editar/Editar Log".
+
+A largura do título de coluna foi ampliada de 30 para 60 caracteres.
+
+Criada mensagem de erro quando o resultado da tabulação suprimir todas as linhas 
+por conter zeros.
+
+Titulos persistem em várias tabulações do mesmo DEF.
+
+Camadas de pontos em DBF passam a poder ter o raio do circulo controlado pelo 
+campo "RAIO".
+
+Legendas da escala do Mapa são geradas como intervalos de classe e seu texto é editável 
+pelo usuário. Assim os valores das faixas pode ser renomeados textos que descrivam o conceito
+
+A salva em HTML foi passado para o padrão XHTML.
+
+Acrescentada Salva em XML.
+
+Corrigido BUG ao incluir tabela com largura maior de chave do que da tabela 
+existente.
+
+Corrigido bug na salva em SQL no caso da descrição da linha conter aspas duplas.
+
+
+Versão 2.2 em 6 de maio de 2002
+
+Para facilitar o uso do TabWin em redes aonde não se dá privilégios de 
+administrador local aos usuários, o arquivo TabWin.ini passa a ser criado no 
+diretório aonde está o executável (ou seja, o diretório aonde está o 
+tabwin32.exe) e não mais em windows/system. Desta forma executáveis em 
+diretórios diferentes terão arquivo de inicialização diferentes.
+Se, ainda assim, o usuário não tiver direto de gravação, o programa avisa o 
+usuário com a mensagem "Sem direitos de gravação para atualizar tabwin.ini" e 
+termina normalmente.
+
+Alterado o código para tratar o erro "Access violation at address 77F6754B in 
+module 'ntdll.dll'", gerado no Windows NT 4.0, sempre que a especificação de 
+arquivos a tabular resultava em uma lista vazia. 
+
+A chamada do help no painel de contrôle, passou para "winhlp32.exe" o que permite o 
+uso dos novos recursos no help associado ao arquivo DEF. (Comando H no .DEF)
+
+
+Versão 2.1 em 18 de janeiro de 2002
+
+Criado botão de "Copia para clipboard" na janela de LOG.
+
+Incluída a opção de selecionar campos para constarem no DBF de saída, no diálogo 
+de "Salvar registros" do painel de contrôle da tabulação. Assim o TabWin pode 
+ser usado para criar DBF com subconjunto dos dados selecionados. Substitue assim 
+a função do "APPENDA.EXE" 
+
+Adicionada a opção de cancelar ao diálogo "Salvar tabela atual?" ao sair do TabWin.
+
+A opção "Gráfico Vazio", no menu Gráfico, foi substituida pelas opções "Mostrar 
+form", que apenas mostra o form, como o antigo "Gráfico vazio" e "Gráfico novo" 
+que remove as séries de dados prepara a criação de um gráfico do inicio.
+
+Mensagem do diálogo "Escolher coluna" podia ficar com a mensagem da operação 
+anterior. Corrigido!
+
+Versão 2.0 Beta 01 em 22 de maio de 2001
+
+O programa TabWin foi portado de Delphi 1.0 para Delphi 4.0.
+
+Agora passa a ser agora uma verdadeira aplicação de 32 bits, não roda mais em 
+Windows 3.11 (A versão 1.41 continua disponível) porém tira proveito dos novos 
+recursos do window 98,98,NT e 2000.
+
+Vantagens:
+
+Os diálogos de escolha de arquivo permitem usar nomes longos.
+
+Desapareceu a limitação do de 32K tanto no uso do ClipBoard quanto na edição de 
+DEF e CNVs. Não aparece mais a mensagem "Unable to insert a line" operações que 
+excedam esses limites..
+
+Novos Limites:                               de             para
+Número máximo de linhas                     8.192           32.767
+Número máximo de colunas                      100              255
+Numero máximo de vértices por polígono
+em arquivo .map                             8.192           32.767
+Número máximo de arcos em arquivo E00       8.192           32.767
+
+Novo módulo de gráficos:
+
+O módulo de grafico foi inteiramente reescrito, porém mantém a característica de 
+gerar gráfico com apenas um click do mouse, permitindo ainda grande variedade de 
+opções para configuracão do mesmo.
+
+ - O módulo gráfico passa a estar está incluído no executável. Não depende de 
+ arquivo externos e nem de entradas no registry.
+ - Suporte para escala logarítmica;
+ - Salva gráfico em BMP, WMF e EMF;
+ - Novos formatos de gráfico (Bolha e Seta);
+ - Gráficos podem ser compostos de séries de vários tipos sobrepostos.
+    (Ex: Setor Barra e linhas juntos);
+
+Adicionalmente foram implementadas as seguintes alteraçoes:
+
+Ausencia de campos de linha, coluna, seleção ou incremento em um DBF provocava a 
+não utilização nos resultados da tabulação somente do arquivo envolvido. Agora,  
+qualquer ausência de campo em um DBF cancela a tabulação a partir daquele ponto.
+
+Implementado suporte para processar arquivos .DBF gerados pelo VisualFoxPro. 
+
+Permite salvar o quadro como Excel e SQL (Create e insert);
+
+Permite abrir, diretamente como quadro, arquivos DBF
+
+Permite gerar DEF e protótipos de CNVs automáticamente para DBFs pré-existentes.
+
+Permite ativar, no Painel de controle da tabulação, a supressão e linhas e 
+colunas zeradas.
+
+Arquivo "não disponível" simplesmente cancela a tabulação e não mais encerra o 
+programa.
+
+Para compatibilizar o tratamento dos caracteres acentuados nos DBFs com o 
+adotado no FoxPro, FoxPro para Windows, VisualFoxPro, Excel e Access, foi 
+implementada conversão automática de caracteres de CodePage 850 (DOS 
+Internacional) para o CodePage 1552(Windows ANSI), tanto para leitura de DBFs 
+sem especificação de "Language Driver" (padrão Office) quanto para os 
+especificados como CodePage 850 (padrão FOX) ou como dBASE PTB cp850 (Padrão BDE 
+para o Brasil). Arquivos DBF com outros CodePages não são convertidos. Ao salvar 
+uma tabela em formato DBF, também é feita a conversão das linhas para CodePage 
+850 e gerada a marca para o "language driver" (Padrão Fox) correspondente. Se 
+for necessário, todas estas conversões podem ser desativadas pelo menu 
+"Editar/Converter acentos de DBF". Esta opção fica gravada no arquivo tabwin.ini 
+e se mantém nas sessões seguintes. 
+
+Considerendo que alguns arquivos de definição dão uma lista muita grande de 
+opções de linha, coluna, incremento etc... foi implementado, nas listas de Painel 
+de Controle da Tabulação, a opção de, ao clicar com o botão direito do mouse, 
+abrir um diálogo poder digitar uma seqüência de caracteres para acelerar a busca 
+na lista. Para listas de escolha simples a seleção recai sobre a primeira 
+ocorrência. Se não houver resultado prevalece o primeiro item. Para listas de 
+escolha múltipla, todos os itens nos quais foi encontrada a seqüência de 
+caracteres, ficarão marcados.
+
+O número máximo de incrementos selecionados em uma tabulação foi elevado de 20 
+para 50. Foi também incluída mensagem de erro para quando o usuário selecionar 
+um número de incrementos maior que o máximo.  
+
+Na liberação da versão 1.4, o uso de comentários na primeira linha de CNV de 
+código longo passou indevidamente a resultar em erro. Corrigido!
+
+Na liberação da versão 1.4, o uso de linhas em branco em CNV de código longo 
+passou indevidamenete a resultar em erro. Corrigido!
+
+Na liberação da versão 1.33, a opção de "Discriminar" nas linhas os "Não 
+classificados" poderia resultar a não inclusão alguns dos mesmos no computo do 
+total das linhas. Corrigido!
+
+
+Versão 1.4 em 2 de junho de 2000
+
+Criado o botão "Localizar" no painel de controle das tabulações que permite 
+pesquisar por usa seqüência de caracteres nas descrições das categorias sendo 
+selecionadas. Muito útil quando o número de categorias para escolher é muito 
+grande como, por exemplo, nomes de hospitais e listas de procedimentos. 
+
+Criada a opção "Localizar" (Ctrl+F) no menu "Editar" que permite pesquisar por 
+uma seqüência de caracteres nas descrições das linhas. Muito útil quando o 
+número de linhas é muito grande como, por exemplo, nomes de hospitais e listas 
+de procedimentos. 
+
+Eliminada a restrição de uso das faixas de códigos em CNV de código longo. 
+(Literais) Agora as faixas de valores podem ser usadas em CNVs de código curto e 
+código  longo.
+
+No menu de mapa,opção "Editar", foi criada a opção de "Selecionar áreas" que 
+permite selecionar áreas com um clique do mouse. Funciona criando uma coluna de 
+nome "Selecionada" que contém "1" ou "0" se a área está ou não selecionada. Essa 
+coluna do quadro pode ser usada em outras operações.
+
+No menu de "Operações" a opção "Constante" foi substituida por "Nova_Coluna", 
+(Ctrl_N) que permite criar nova coluna, não apenas com uma constante, mas com 
+uma expressão que inclui constantes, valores das colunas existentes no quadro e 
+operações. As colunas podem ser identificadas pelo seu título ou na forma Cnn, 
+em que "nn" representa o número da coluna. As operações atualmente suportadas 
+são adição (+), subtração(-), multiplicação (*), divisão(/) e potência(^). O 
+total da nova coluna corresponde as mesmas operações realizadas sobre os totais 
+das colunas referidas. Como a coluna é criada do tipo Soma, basta recalcular o 
+Total para se obter a soma das linhas.  
+
+Implementado no menu a opção "Estatísticas" que gera uma janela com um conjunto 
+de estatísticas descritivas relativas as colunas selecionadas.
+
+A importação de arquivos do tipo PRN agora trata também valores em notação 
+científica.
+
+O total das colunas era sempre do tipo Soma. A partir dessa versão foi 
+implementada opção para vários tipos de total para cada coluna a saber: 
+SemTotal, Soma, Produto, Média, Inicial, Final, Mínimo, Máximo, Pré-Calculado. O 
+tipo Sem Total, não é impresso e o tipo pré-calculado não é afetado pelo 
+recálculo do total. O total tipo Soma continua sendo padrão. 
+
+Com o objetivo de permitir a inclusão de dados de DBFs em que o campo chave foi 
+definido com comprimento maior que na tabela, em "Arquivo/avançado/incluir 
+campos de DBF", o campo chave do DBF será considerado até o comprimento da chave 
+do quadro ativo, desde que esta não seja zero.
+
+Eliminada a constante 'Arquivo=', no lançamento do nome do arquivo no log da 
+tabulação, para passar o limite de arquivos de uma tabulação de 1450 para 2300.
+
+Implementado, no menu de ver DBF, a possibilidade a adicionar registros ao 
+arquivo a partir de um arquivo .TXT com os campos delimitados por um caractere 
+escolhido. 
+
+Implementada função de ver informações sobre a estrutura do DBF em Ver DBF.
+
+ 
+Versão 1.33 em 21 de novembro de 1999
+
+Criada a alternativa de salvar a tabela como arquivo tipo DBF do 
+dbaseIII plus.
+
+Criada, no menu de operações, as funções Mínimo e Máximo, para serem 
+usadas com várias colunas e que cria uma nova coluna com o menor ou 
+maior valor, respectivamente, entre os valores das linhas 
+correspondentes na colunas selecionadas.  
+
+Criada, no menu operações, a opção Absoluto, que cria uma nova coluna 
+com os valores absolutos da coluna selecionada.
+
+Criada uma opção, no menu de editar da janela do mapa, que cria uma 
+nova coluna na tabela com as distancias calculadas a partir de um ponto 
+escolhido no mapa e as posições das legendas de cada objeto na tabela. 
+Para polígonos em geral, a posição da legenda é o centróide e para 
+municipios representa a sede municipal. A nova coluna é gerada no 
+próximo evento "OnMouseUp" e para visualizá-la basta fechar a janela do 
+mapa ou clicar na tabela.
+
+A janela de gráficos não é mais modal. Isto significa que tabela pode 
+ser vista e alterada enquanto se visualiza o gráfico. Entretanto, 
+alterações na tabela não se refletem automaticamente no gráfico.
+
+A janela de mapa também não é mais modal. Entretanto, ao contrário do 
+gráfico, as alterações feitas no dados da tabela vão se refletir no 
+mapa. Assim é possivel, por exemplo, alterar os dados, titulos de 
+coluna ou cabeçalhos sem fechar o mapa.
+
+Implementada, em Abrir/Importar mapas, a opção de importar diretamente 
+um arquivo de waypoints, gravados pelos GPS da GARMIN e capturados 
+pelo programa PCX5, com a extensão .wpt. 
+
+A ocorrência do caractere '#' no campo de subtotal do CNV indica que 
+os valores daquela linha são considerados como comentário, não 
+contribuindo para o cálculo do total da coluna. 
+
+Alterada a leitura do arquivo .tab e .prn para preservar os brancos a 
+esquerda do título das linhas.
+
+Na exportação da tabela para o formato SPRING foi incluído um diálogo 
+para perguntar o nome da categoria de objetos no SPRING. 
+
+Ocorrência do caractere '"' na última posição da descrição da linha 
+fazia com que houvesse perda de linhas na recuperação do arquivo salvo. 
+Corrigido!
+
+Colocar legenda em uma camada não transparente no mapa fazia com que o 
+fundo da legenda fosse pintada com a mesma cor de fundo do objeto. 
+Corrigido!
+
+Alteração de cabeçalhos ou rodapé não marcava o quadro como modificado 
+e portanto o usuário não era avisado para salvar o tabela antes de 
+sair. Corrigido!
+
+Fechar e reabrir a janela de visualizar DBF provocava cancelamento do 
+programa com a mensagem de arquivo não aberto. Corrigido!
+
+
+Versão 1.32 em 3 de setembro de 1999
+
+Implementada exportação de tabelas no formato SPRING.
+
+Implementada importação de "Pline" e "Text" em arquivos MIF/MID 
+gerados pelo MapInfo.
+
+Implementado arquivo TABWIN.INI, no diretório Windows que mantém, 
+através das várias sessões, os diretórios de Dados(Arquivos DEF), 
+Mapa(arquivos de Mapas) e Salva(arquivos TAB);
+
+A salva de registros selecionados provocaria o erro "Leitura após o 
+fim do arquivo" sempre que os arquivos fossem especificados por lista 
+em formato texto: Corrigido!  
+
+Nome de área, em arquivo importado como .XY do MapMaker, iniciado com 
+um ou mais brancos, causaria erro na importação. Corrigido!
+
+A importação de MapInfo MIF/MID gerava um loop quando um objeto no arquivo MIF 
+fosse de tipo desconhecido do TabWin: Corrigido!
+
+
+Versão 1.31 em 12 de julho de 1999
+
+Importação de arquivos .bnd, gerados pelo Epimap, no formato 
+comprimido, poderia cancelar com a mensagem de "Este programa executou 
+uma operação ilegal e será cancelado". Corrigido.
+
+Implantada importação arquivos .XY gerados pelo MapMaker.
+
+
+Versão 1.3 em 29 de junho de 1999
+
+   No dialogo de Abrir/importar mapa, foram incluidas, com vistas a 
+possibilidades de converter automáticamenta as bases cartográficas  
+geradas pelos municípios, a possibilidade de importar mapas gerados 
+pelos softwares SIGs de uso mais comum no Brasil. Assim o TabWin passa 
+a importar diretamente polígonos, linhas e pontos gerados nos 
+seguintes formatos:
+
+ARC/INFO Exports          .E00
+ArcView Shapefile         .SHP 
+Atlas GIS Ascii           .BNA
+EpiMap Ascii Boundary     .BND
+MapInfo Interchange       .MIF
+
+
+   Criada a possibilidade de salvar as linhas do quadro no formato 
+.CNV, muito útil com mapas importados. 
+
+   Criado novo diálogo, para o estabelecimento das classes do mapa 
+temático, que permite visualizar o HISTOGRAMA de freqüências relativo 
+aos limites das classes em vigor. 
+
+   Criado, no menu Arquivo/Avançado, a opção que permite compactar e 
+expandir arquivos DBF sem sair do Tabwin, dispensando pois a 
+utilização dos utilitários DOS de linha de comando COMPDBF.EXE e 
+EXPDBF.EXE.
+
+   Criada opção, na janela de tabulação, opção para controlar o teste 
+do CRC (Ciclic Redundancy Check), criado durante a compressão do 
+arquivo tipo DBC, durante a tabulação do mesmo, para garantir a sua 
+integridade. O uso desta opção, que aumenta em 50% o tempo de tabulação 
+de um arquivo, é desnecessária em tabulações diretas a partir dos CDs 
+distribuidos pelo DATASUS, mas pode ser recomendável em ambientes de 
+rede ou outros em que possa ter ocorrido a deterioração dos arquivos 
+armazenados.    
+
+    Em ampliações maiores (Zoom), dependendo do driver de vídeo e 
+memória disponível, as áreas externas à região em zoom podiam, 
+indevidamente, se refletir sobre a área de desenho. Problema 
+minimizado por desenhar somente os polígonos que tenham pelo menos um 
+ponto dentro da área de zoom.
+
+Uma tabulação, com as linhas definidas a partir de um .DBF, na qual 
+fosse solicitada a discriminação dos valores não classificados, seria 
+cancelada, sempre que os items a discriminar fossem mais que dois. 
+Expandida a capacidade para discriminar até 200 códigos nessa condição.
+
+
+Versão 1.2 em 23 de dezembro de 1998
+
+  Alterado o diálogo de abertura de arquivo de definição, permitindo 
+visualizar a descrição do .def (primeira linha) sempre que o arquivo é 
+selecionado.
+
+   A opção de salvar planilha atual passou a ser apresentada só após 
+ser confirmada a execução de nova tabulação.
+
+   Corrigidas várias sequências de manipulação de forma a permitir o 
+cancelamento da operação por escape.
+
+   Ao salvar em formato HTML, os valores zerados são substituídos por 
+"-".
+
+   Nos mapas, o código das regiões só será exibido se estiver também 
+sendo exibido na planilha (opção Esconder Chave, no menu 
+Arquivo/Avançado).
+
+   Para cabeçalhos e rodapé, a caixa de texto permitia textos maiores 
+que 80 caracteres, que eram truncados ao imprimir. Corrigido.
+
+   A abertura de arquivo mapa agora inclui também o campo chave na 
+descrição das linhas.
+
+   Atualizado o telefone do MS-BBS na janela Sobre.
+
+
+Versão 1.11 em 6 de abril de 1998
+
+Se a largura dos nomes das linhas não permitisse a impressão de pelo 
+menos uma coluna de valores em cada página, os resultados eram 
+imprevisíveis podendo inclusive ocorrer o congelamento do programa. 
+Corrigido.
+
+Versão 1.10 em 1 de abril de 1998
+
+Incluído, no menu de mapa, opção para que os valores delimitadores das 
+classes da variável controladora do cartograma sejam determinados de 
+forma a gerar a mesma freqüência de poligonos em cada classe.
+
+Extendida a função de Mostrar DBF para incluir ordenação, filtragem de 
+registros e impressão de relatórios. Depende da instalação do 
+VERDBF.EXE no mesmo diretorio onde o TabWin está instalado.
+
+Incluída opção para plotagem registros de um arquivo tipo DBF, como 
+camada adicional de um mapa, desde que o arquivo contenha os campos 
+LATITUDE e LONGITUDE na mesma escala do mapa base.
+
+Melhorada a interface de manipulação das camadas de um mapa 
+simplificando a especificação da cor da camadas e permitindo 
+configurar o tamanho do circulo a ser plotado.
+
+Implementada função para mover o mapa durante o zoom.
+
+Eventualmente a gravação do arquivo .TAB seria incorreta para tabelas 
+oriundas do Excel. Corrigido.
+
+Linhas de total poderiam ser impressas de forma truncada se o fonte da 
+impressora fosse mais largo no estilo negrito. Corrigido pela 
+supressão do negrito.
+
+Se, não cabendo todas as colunas em uma página, ficasse apenas uma 
+coluna na página seguinte, a mesma não seria impressa. Corrigido.    
+
+
+Versão 1.00 em 8 de março de 1998
+
+  Criada opção para durante a execução de uma tabulação salvar um 
+arquivo .DBF com os registros selecionados. Desta forma é possivel 
+selecionar grupo de registros de uma massa muito grande de arquivos e 
+criar um subset somente com os que interessam a nossa pesquisa, e, a 
+partir daí, continuar nossas tabulações marcando somente o .DBF salvo 
+na lista de arquivos.
+
+  Criado um Menu Principal no formulário Mapa, para permitir operar a 
+partir de teclado, bem como, dar uma forma mais racional a manipulação 
+das camadas adicionais.
+
+  As visualização das legendas do mapa base passou a ser controlada
+pelas linhas da tabela e não pelo arquivo .map. Áreas cujos nomes
+não constam das linhas da tabela não terão mais as legendas impressas.
+
+  Incluida a opção de, ao salvar tabelas em formato HTML, incluir 
+cabeçalhos e rodapés padrões que serão utilizados desde que os 
+arquivos INICIO.HTM e TERMINO.HTM, respectivamente, estejam 
+disponíveis no diretório corrente no momento da gravação do arquivo.
+
+  Foi incluida opção de associar NOTAS TÉCNICAS a linhas, colunas ou 
+células da tabela simplesmente clicando com o botão direito do mouse 
+sobre o título da linha, título da coluna ou sobre uma célula. A nota 
+então digitada será exibida, em vermelho, na barra de status, sempre 
+que o cursor passar sobre o título da linha, sobre o título da coluna 
+ou sobre a célula. As Notas Técnicas são mostradas no rodapé das 
+tabelas salva em HTML e ao final dos relatórios impressos.
+
+  Foi inteiramente reescrita a rotina de impressão, permitindo 
+imprimir em qualquer fonte TrueType, imprimir Notas Técnicas e 
+imprimir corretamente planilhas cuja largura exceda a largura da 
+página. 
+
+  Incluido uma opção para visualizar o conteúdo de um DBF, de uma
+forma semelhante ao comando BROWSE do dBaseIII plus.
+
+  Número de linhas do quadro passou a ser informado na linha de 
+status.
+
+  Colunas de não-classificados não apresentavam as linhas de subtotal
+calculadas corretamente. Corrigido.
+
+  Linhas de rodapé não eram impressos em páginas que contivessem 
+linhas de total. Corrigido.  
+
+
+Versão 0.09 Beta em 17/11/97 
+
+  A passagem de um arquivo DEF como parâmetro na linha de comando,
+inicia automaticamente o dialogo de abertura do arquivo de definição
+já posicionado neste arquivo, simplificando a tabulação.
+
+  Registros, marcados como deletados, porém não removidos do DBF pelo 
+comando PACK, não são mais considerados nas tabulações. Êste 
+comportamento é coerente com a opção SETDELETEDON do dBase e é o 
+padrão do TABX.
+
+  Criada nova opção no arquivo CNV para suportar a classificação de 
+variáveis numéricas segundo faixas de valores. Basta para isso colocar 
+a letra F ou a palavra FAIXAS como terceiro parâmetro da linha inicial 
+do CNV e informar os limites superiores de cada faixa no campo de 
+código do CNV, alinhado a direita da largura definida para o código.
+
+  Ampliado o número máximo de pontos de uma poligonal para 5000.
+
+  Criada mensagem para informar que uma poligonal excede MaxPontos
+na importação de arquivos tipo BNA. 
+
+  Ampliado para 3 segundos o tempo para repintar automaticamente o
+mapa quando se editam os valores limites das classes.
+  
+  Incluído teste para garantir que uma tabulação com seleção 
+somente se inicie se tiver pelo menos uma categoria selecionada.
+
+  A existência dos caracteres "," ou ";" dentro de uma descrição de 
+linha ou coluna provocava aparecimento de colunas zeradas quando da 
+reabertura do arquivo. Corrigido.
+
+  Abrir um arquivo mapa pelo menu de arquivos deixava o arquivo 
+aberto. Corrigido.
+
+  A leitura de um arquivo .TAB que tivesse mapa incluído não 
+inicializava corretamente o limite inferior da primeira classe 
+resultando em áreas em branco. Corrigido.
+
+  A repetição de uma tabulação, com aproveitamento das opções da 
+tabulação anterior, após a salva da mesma em um diretório diferente, 
+provocava a mensagem "Arquivo CNV não encontrado". Corrigido com a 
+alteração a seqüência das caixas de diálogo para retornar sempre ao 
+diretório das definições.
+
+  A discriminação de valores não classificados nas linhas incluia um 
+caractere adicional. Corrigido.
+
+  O numero de casas decimais, na exibição de valores no mapa, podia não 
+corresponder ao número de decimais da coluna selecionada. Corrigido.
+
+  As linhas de subtotal não eram calculadas se nenhuma coluna fosse 
+ativadas. Corrigido.   
+
+Versão 0.08 Beta em 1/10/1997
+
+  Criado diálogo para permitir calcular indicadores em uma única operação.
+
+  Criado botão de "nova camada" no form de MAPA que permite adicionar nova 
+camada cosmética sobre o cartograma base, na cor escolhida.
+
+  O gráfico de setores passa a mostrar os valores e não as percentagens.
+Se ainda quizermos as percentagens é só criar uma coluna de percentagens
+e fazer o gráfico com ela.
+
+  Incluido, no grafico de barras, a opção de barras horizontais.
+
+  Incluidos, na barra de ferramentas do gráfico opção para ativar
+uma barra de paletas e uma barra de padrões.
+
+  No menu de arquivos foi incluida opção para abrir a tabela correspondente
+a qualquer arquivo .MAP com uma coluna de valores inicialmente zerados
+para permitir a edição manual de valores a serem mapeados.
+
+  A ordenação de linhas em quadro já ordenado nos quais se suprimissem
+linhas era ignorada quando se tentava reordenar pela mesma coluna. Corrigido.
+
+  A supressão de todas as linhas gerava comportamento incorreto. Corrigido.
+
+  A impressão de quadro ordenado por coluna em ordem ascendente ignorava
+a ordem de impressão das linhas. Corrigido. 
+
+Versão 0.07 Beta em 15/07/1997
+
+  Criado diálogo para perguntar especificamente se o usuário deseja 
+salvar o quadro atual antes do diálogo para escolha do nome do 
+arquivo a ser gravado.
+
+  Ao executar várias tabulações seguidas não ficava claro o caminho 
+de aproveitar opções da tabulação anterior. Criado um diálogo 
+específico para facilitar o usuário.
+
+  Pequenos acertos na impressão do Mapa para facilitar a impressão 
+de transparências.  
+
+  Na janela de mapa, o botão de "muda cores" permite escolher para 
+cada paleta a densidade cromática como ascendente ou descendente.
+
+  A inclusão de uma tabela em outra preexistente, diretamente ou via 
+clipboard, provocava sempre o recalculo dos totais das colunas com 
+resultados incorretos nas médias já calculadas. Corrigido.
+
+  A impressão alternada de mapas ou tabelas provocava tamanhos 
+incorretos das letras na impressora. Corrigido.
+
+  A lista arquivos na tela de tabulação não entrava em ordem 
+alfabetica. Corrigido.
+
+  

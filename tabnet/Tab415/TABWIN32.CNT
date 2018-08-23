@@ -1,0 +1,169 @@
+:Base TabWin32.hlp
+:Title Tab para Windows
+1 Conhecer o programa
+2 Apresentação=Apresentacao
+2 Ambiente de operação=Ambiente_de_operacao
+2 Visão geral de uso do programa=Visao_Geral_de_Uso_do_Programa
+1 Obter e instalar o programa
+2 Obter o TabWin=Obter_o_TabWin
+2 Instalar o TabWin=Instalar_o_TabWin
+1 Abrir e fechar o programa
+2 Abrir o programa=Abrir_o_programa
+2 Fechar o programa=Fechar_o_programa
+1 Preparar a tabulação
+2 Preparar-se para efetuar a tabulação=Preparar_se_para_efetuar_a_tabulacao
+1 Efetuar a tabulação
+2 Iniciar uma nova tabulação=Iniciar_uma_nova_tabulacao
+2 Selecionar o arquivo de definição=Selecionar_o_arquivo_de_definicao
+2 Efetuar escolhas no Painel de Tabulação=Efetuar_escolhas_no_Painel_de_Tabulacao
+2 Realizar a tabulação=Realizar_a_tabulacao
+2 Ler o arquivo de Log=Ler_um_arquivo_de_Log
+1 Trabalhar com tabelas
+2 Abrir a tabela=Abrir_tabela
+2 Imprimir a tabela=Imprimir_a_tabela
+2 Exportar a tabela=Exportar_a_tabela
+2 Salvar a tabela=Salvar_a_tabela
+1 Efetuar operações com os dados da tabela
+2 Calcular indicador=Calcular_indicador
+2 Efetuar operações aritméticas=Efetuar_operacoes_aritmeticas
+2 Somar valores de duas ou mais colunas=Somar_valores_de_duas_ou_mais_colunas
+2 Subtrair valores de duas colunas=Subtrair_valores_de_duas_colunas
+2 Multiplicar os valores de duas colunas=Multiplicar_os_valores_de_duas_colunas
+2 Dividir os valores de duas colunas=Dividir_os_valores_de_duas_colunas
+2 Identificar valor mínimo=Identificar_valor_minimo
+2 Identificar valor máximo=Identificar_valor_maximo
+2 Multiplicar por fator=Multiplicar_por_fator
+2 Calcular percentagem=Calcular_percentagem
+2 Acumular valores de uma coluna=Acumular_valores_de_uma_coluna
+2 Calcular valor absoluto=Calcular_valor_absoluto
+2 Considerar os valores inteiros=Considerar_os_valores_inteiros
+2 Definir a seqüência=Definir_a_sequencia
+2 Recalcular o total=Recalcular_o_total
+2 Inserir nova coluna=Inserir_nova_coluna
+1 Efetuar ajustes na aparência da tabela
+2 Ordenar valores=Ordenar_valores
+2 Alterar o cabeçalho da coluna=Alterar_o_cabecalho_da_coluna
+2 Alterar a largura da coluna=Alterar_a_largura_da_coluna
+2 Alterar o número de casas decimais=Alterar_o_numero_de_casas_decimais
+2 Alterar o tipo de total=Alterar_o_tipo_de_total
+2 Eliminar coluna=Eliminar_coluna
+2 Mover colunas=Mover_colunas
+2 Suprimir e agregar linhas=Suprimir_linhas
+2 Esconder ou mostrar chave=Esconder_ou_mostrar_chave
+2 Fixar o comprimento da chave=Fixar_o_comprimento_da_chave
+2 Alterar o primeiro cabeçalho da tabela=Alterar_o_primeiro_cabecalho_da_tabela
+2 Alterar o segundo cabeçalho da tabela=Alterar_o_segundo_cabecalho_da_tabela
+2 Inserir nota de rodapé=Inserir_nota_de_rodape
+1 Trabalhar com gráficos
+2 Começar com um gráfico vazio=Comecar_com_um_grafico_vazio
+2 Construir um gráfico de linhas=Construir_um_grafico_de_linhas
+2 Construir um gráfico de barras=Construir_um_grafico_de_barras
+2 Construir um gráfico de barras horizontais=Construir_um_grafico_de_barras_horizontais
+2 Construir um gráfico de setores=Construir_um_grafico_de_setores
+2 Construir um gráfico de áreas=Construir_um_grafico_de_areas
+2 Construir um gráfico de pontos=Construir_um_grafico_de_pontos
+2 Construir um gráfico de bolhas=Construir_um_grafico_de_bolhas
+2 Construir um gráfico de setas=Construir_um_grafico_de_setas
+2 Editar um gráfico=Editar_um_grafico
+2 Adicionar um novo tipo de gráfico=Adicionar_um_novo_tipo_de_grafico
+2 Alterar a cor de fundo=Alterar_a_cor_de_fundo
+2 Alterar a fonte do título do gráfico=Alterar_a_fonte_do_titulo_do_grafico
+2 Alterar as opções de exibição do gráfico=Alterar_as_opcoes_de_exibicao_do_grafico
+2 Copiar o gráfico para a Área de Transferência=Copiar_o_grafico_para_a_Area_de_Transferencia
+2 Editar os eixos do gráfico=Editar_os_eixos_do_grafico
+2 Efetuar um zoom no gráfico=Efetuar_um_zoom_no_grafico
+2 Imprimir o gráfico=Imprimir_o_grafico
+2 Inserir uma figura de fundo=Inserir_uma_figura_de_fundo
+2 Inserir/Retirar o efeito 3 Dimensões=Inserir_Retirar_o_efeito_3_Dimensoes
+2 Inserir/Retirar legenda=Inserir_Retirar_legenda
+2 Retirar o efeito de zoom do gráfico=Retirar_o_efeito_de_zoom_do_grafico
+2 Salvar o gráfico=Salvar_o_grafico
+1 Trabalhar com mapas
+2 Abrir um arquivo de mapa=Abrir_um_arquivo_de_mapa
+2 Importar mapas=Importar_mapas
+2 Construir um mapa=Construir_um_mapa
+2 Editar um mapa=Editar_um_mapa
+2 Abrir um novo mapa base=Abrir_um_novo_mapa_base
+2 Abrir e fechar o zoom=Abrir_e_fechar_o_zoom
+2 Adicionar e retirar camadas do mapa=Adicionar_e_retirar_camadas_do_mapa
+2 Copiar o mapa para a Área de Transferência=Copiar_o_mapa_para_a_area_de_Transferencia
+2 Editar classes do mapa=Editar_classes_do_mapa
+2 Alterar o número de classes do mapa=Alterar_o_numero_de_classes_do_mapa
+2 Adotar classes de intervalos iguais=Adotar_classes_de_intervalos_iguais
+2 Adotar classes de igual freqüência=Adotar_classes_de_igual_frequencia
+2 Alterar o valor dos limites superiores=Alterar_o_valor_dos_limites_superiores
+2 Escolher novas cores para o mapa=Escolher_novas_cores_para_o_mapa
+2 Gerar coluna de distâncias=Gerar_coluna_de_dist_ncias
+2 Imprimir o mapa=Imprimir_o_mapa
+2 Inserir ou retirar as bordas do mapa=Inserir_ou_retirar_as_bordas_do_mapa
+2 Mostrar ou esconder a sede=Mostrar_ou_esconder_a_sede
+2 Mostrar legendas=Mostrar_legendas
+2 Mostrar valores=Mostrar_valores
+2 Mover o mapa na tela=Mover_o_mapa_na_tela
+2 Mudar a paleta de cores=Mudar_a_paleta_de_cores
+2 Obter informações=Obter_informacoes
+2 Pegar legendas do MAP=Pegar_legendas_do_MAP
+2 Repintar o mapa=Repintar_o_mapa
+2 Salvar o mapa como bitmap=Salvar_o_mapa_como_bitmap
+2 Selecionar áreas=Selecionar_areas
+1 Trabalhar com arquivos DEF e CNV
+2 Conceitos básicos de arquivo DEF=Conceitos_basicos_de_arquivo_DEF
+2 Conceitos básicos de arquivo CNV=Conceitos_basicos_de_arquivo_CNV
+2 Editar um arquivo DEF=Editar_um_arquivo_DEF
+2 Editar um arquivo CNV=Editar_um_arquivo_CNV
+2 Criar um novo arquivo DEF=Criar_um_novo_arquivo_DEF
+2 Criar novos arquivos CNV=Criar_novos_arquivos_CNV
+1 Trabalhar com arquivos DBF
+2 Abrir um arquivo DBF=Abrir_um_arquivo_DBF
+2 Comprimir um arquivo DBF=Comprimir_um_arquivo_DBF
+2 Expandir um arquivo DBC=Expandir_um_arquivo_DBC
+2 Testar CRC=Testar_CRC
+2 Converter acentos de um arquivo DBF=Converter_acentos_de_um_arquivo_DBF
+2 Salvar registros em um novo arquivo DBF=Salvar_registros_em_um_novo_arquivo_DBF
+2 Visualizar um arquivo DBF=Visualizar_um_arquivo_DBF
+2 VerDBF - Operar arquivos DBF=VerDBF_Operar_arquivos_DBF
+1 Analisar dados estatísticos
+2 Analisar estatísticas descritivas de uma coluna=Analisar_estatisticas_descritivas_de_uma_coluna
+2 Analisar coeficiente de correlação de Pearson=Analisar_coeficiente_de_correlacao_de_Pearson
+2 Analisar a regressão linear simples=Analisar_a_regressao_linear_simples
+2 Analisar dados do histograma=Analisar_dados_do_histograma
+1 Barra de Menus
+2 Menu Arquivo=Menu_Arquivo
+2 Menu Editar=Menu_Editar
+2 Localizar categoria na Área de Linhas=Localizar_categoria_na_area_de_Linhas
+2 Menu Operações=Menu_Operacoes
+2 Editar arquivo DEF ou CNV=Editar_arquivo_DEF_ou_CNV
+2 Menu Estatísticas=Menu_Estatisticas
+2 Menu Quadro=Menu_Quadro
+2 Menu Gráfico=Menu_Grafico
+1 Barra de Ferramentas (Botões)
+2 Nova tabela=Nova_tabela
+2 Abrir tabela=Abrir_tabela
+2 Salvar a tabela=Salvar_a_tabela
+2 Executar tabulação=Executar_tabulacao
+2 Copiar para Clipboard=Copiar_para_Clipboard
+2 Colar do Clipboard=Colar_do_Clipboard
+2 Incluir tabela=Incluir_tabela
+2 Calcular indicador=Calcular_indicador
+2 Mostra DBF=Mostra_DBF
+2 Imprimir a tabela=Imprimir_a_tabela
+2 Gráfico de Linhas=Construir_um_grafico_de_linhas
+2 Gráfico de Barras=Construir_um_grafico_de_barras
+2 Gráfico de Barras Horizontais=Construir_um_grafico_de_barras_horizontais
+2 Gráfico de Setores=Construir_um_grafico_de_setores
+2 Gráfico de Áreas=Construir_um_grafico_de_areas
+2 Gráfico de Pontos=Construir_um_grafico_de_pontos
+2 Mapa=Construir_um_mapa
+1 Recursos especiais do programa
+2 Associar arquivos "tab" ao TabWin=Associar_arquivos_tab_ao_TabWin
+2 Tabular por faixas de valor=Tabular_por_faixas_de_valor
+2 Tabular as "n" maiores categorias de uma variável=Tabular_as_n_maiores_categorias_de_uma_vari_vel
+2 Tabular uma lista de arquivos=Tabular_uma_lista_de_arquivos
+2 Calcular subtotais=Calcular_subtotais
+2 Incluir "notas técnicas"=Incluir_notas_tecnicas_
+2 Tratar os dados não-classificados=Tratar_os_dados_n_o_classificados
+1 Algumas definições
+2 Arquivo de definição=Arquivo_de_definicao
+2 Arquivos DBF=Arquivos_DBF
+2 Arquivos de conversão=Arquivos_de_convers_o
+2 Arquivos DBC=Arquivos_DBC
