@@ -55,6 +55,16 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
         $ pip install -r requirements.txt
     ```
     
+1. Criando o Kernel para o jupyter para que ele "visualize" as dependências instaladas
+
+    ```bash
+        $ ipython kernel install --user --name=ms_daf
+    ```
+    
+1. Selecionando o Kernel no Jupyter
+
+    ![Jupyter Kernel Selection img](jupyter_kernel_selection.png)
+    
 1. __SE NÃO INSTALAR CORRETAMENTE SIGA OS PRÓXIMOS PASSOS__
 
 1. Instalar o jupyter (execute esses comandos com o VENV ativo)
