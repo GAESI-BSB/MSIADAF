@@ -70,6 +70,12 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
       $ pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.9.0-py3-none-any.whl
     ```
 
+1. Instalar o gerenciador de extensões do jupyter
+
+    ```bash
+        $ pip install jupyter_contrib_nbextensions
+    ``` 
+
 __OBSERVAÇÃO: Não atualize (upgrade) o pip! O tensorflow 1.9 é compatível com o pip instalado neste processo!__ Caso faça o Upgrade, execute o comando a seguir, com o env ativo:
 
 ```bash
