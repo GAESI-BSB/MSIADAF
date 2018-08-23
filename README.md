@@ -36,7 +36,20 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
       $ source ~/.bash_profile
     ```     
 
-1. Instalar o jupyter notebook via gerenciador de pacote do Python3 (pip3)
+1. Configuração do Virtual Env (VENV)
+    
+    1. Criação do VENV
+        ```bash
+           # Vem instalado com o PIP, não precisa instalar o VirtualEnv
+           $ virtualenv -p python3 venv
+        ```
+    
+    1.  Ativando o VENV (faça isso toda vez que for executar o projeto)
+        ```bash
+            $ source venv/bin/activate
+        ```
+
+1. Instalar o jupyter (execute esses comandos com o VENV ativo)
 
     ```bash
       # Todos Sistemas Operacionais
@@ -48,36 +61,7 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
     ```bash
       # Todos Sistemas Operacionais
       $ pip install -U floyd-cli
-    ```   
-
-1. Instalar o MiniConda:
-
-    1. [(Todos)Python 3.6](https://conda.io/miniconda.html)
-    1. [(MacOS X)Python 3.6](https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh)
-    1. [(Ubuntu - 64Bits)Python 3.6](https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh)
-    1. [(Ubuntu - 32Bits)Python 3.6](https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86.sh)
-    
-1. Criar o ambiente no MiniConda
-
-    ```bash
-      # Todos Sistemas Operacionais
-      $ conda create -n ms_daf_ia pip python=3.6
-    ```
-
-1. Ativando o ambiente no MiniConda
-
-    ```bash
-      # Todos Sistemas Operacionais
-      $ source activate ms_daf_ia
-    ```
-
-1. Desativando o ambiente no MiniConda
-
-    ```bash
-      # Todos Sistemas Operacionais
-      $ source deactivate
-    ```
-    
+    ```       
 
 1. Com o __ambiente ativo__, instale o tensorflow
 
@@ -95,6 +79,6 @@ __OBSERVAÇÃO: Não atualize (upgrade) o pip! O tensorflow 1.9 é compatível c
 __Se aparecer stacktrace no import do tensorflow no arg async significa que existem 2 pythons interpreters rodando o tensorflow e você deve executar um uninstall do tensorflow fora do env conda__:
 
 ```bash
- $ conda deactivate
+ $ deactivate
  $ pip uninstall tensorflow
 ```
