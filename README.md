@@ -49,6 +49,14 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
             $ source venv/bin/activate
         ```
 
+1. Instalando as dependências com as versões unificadas
+
+    ```bash
+        $ pip install -r requirements.txt
+    ```
+    
+1. __SE NÃO INSTALAR CORRETAMENTE SIGA OS PRÓXIMOS PASSOS__
+
 1. Instalar o jupyter (execute esses comandos com o VENV ativo)
 
     ```bash
