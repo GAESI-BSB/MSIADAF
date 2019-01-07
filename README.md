@@ -72,6 +72,7 @@ Inteligência Artificial - Departamento de Assistência Farmacêutica do Minist�
     ```bash
       # Todos Sistemas Operacionais
       $ pip install jupyter notebook
+      $ pip freeze > requirements.txt
     ```
 
 1. Instalando a dependencia da computação em núvem (floydhub):

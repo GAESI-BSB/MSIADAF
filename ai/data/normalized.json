@@ -1,0 +1,44 @@
+[
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth":"2017/01",
+    "count": 25
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth": "2017/02",
+    "count": 36
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth": "2017/03",
+    "count": 93
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth": "2017/04",
+    "count": 64
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth": "2018/01",
+    "count": 40
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth": "2018/02",
+    "count": 100
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "dtmonth": "2018/03",
+    "count": 94
+  }
+]

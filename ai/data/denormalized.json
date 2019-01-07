@@ -1,0 +1,47 @@
+[
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "ALAGOAS",
+    "2017/01": 25,
+    "2017/02": 36,
+    "2017/03": 93,
+    "2017/04": 64,
+    "2018/01": 40,
+    "2018/02": 100,
+    "2018/03": 94,
+    "PREVISAO": 79,
+    "Estoque2018/11": 83,
+    "TRIMESTRE": 236,
+    "REPASSE": 153
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "CEARÁ",
+    "2017/01": 86,
+    "2017/02": 162,
+    "2017/03": 193,
+    "2017/04": 241,
+    "2018/01": 155,
+    "2018/02": 421,
+    "2018/03": 621,
+    "PREVISAO": 403,
+    "Estoque2018/11": 848,
+    "TRIMESTRE": 1210,
+    "REPASSE": 362
+  },
+  {
+    "PRODUTO": "ABATACEPTE 125 MG/ML SOL INJ (SER PREENC) 1 ML GRUPO 1.A",
+    "UF": "PARAÍBA",
+    "2017/01": 5,
+    "2017/02": 121,
+    "2017/03": 139,
+    "2017/04": 92,
+    "2018/01": 36,
+    "2018/02": 203,
+    "2018/03": 131,
+    "PREVISAO": 124,
+    "Estoque2018/11": 0,
+    "TRIMESTRE": 373,
+    "REPASSE": 373
+  }
+]
