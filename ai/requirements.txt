@@ -15,6 +15,7 @@ entrypoints==0.2.3
 floyd-cli==0.11.15
 gast==0.2.0
 grpcio==1.17.1
+h5py==2.9.0
 idna==2.8
 ipykernel==5.1.0
 ipython==7.2.0
@@ -27,6 +28,9 @@ jupyter==1.0.0
 jupyter-client==5.2.4
 jupyter-console==6.0.0
 jupyter-core==4.4.0
+Keras==2.2.4
+Keras-Applications==1.0.6
+Keras-Preprocessing==1.0.5
 kiwisolver==1.0.1
 Markdown==3.0.1
 MarkupSafe==1.1.0
@@ -57,6 +61,7 @@ qtconsole==4.4.3
 raven==6.10.0
 requests==2.21.0
 requests-toolbelt==0.8.0
+scipy==1.2.0
 Send2Trash==1.5.0
 six==1.12.0
 tabulate==0.8.2
