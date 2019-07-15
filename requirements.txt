@@ -2,6 +2,7 @@ absl-py==0.6.1
 appnope==0.1.0
 args==0.1.0
 astor==0.7.1
+attrs==19.1.0
 backcall==0.1.0
 bleach==3.0.2
 certifi==2018.11.29
@@ -27,11 +28,17 @@ jsonschema==2.6.0
 jupyter==1.0.0
 jupyter-client==5.2.4
 jupyter-console==6.0.0
+jupyter-contrib-core==0.3.3
+jupyter-contrib-nbextensions==0.5.1
 jupyter-core==4.4.0
+jupyter-highlight-selected-word==0.2.0
+jupyter-latex-envs==1.4.6
+jupyter-nbextensions-configurator==0.4.1
 Keras==2.2.4
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 kiwisolver==1.0.1
+lxml==4.3.4
 Markdown==3.0.1
 MarkupSafe==1.1.0
 marshmallow==2.16.3
@@ -53,6 +60,7 @@ protobuf==3.6.1
 ptyprocess==0.6.0
 Pygments==2.3.1
 pyparsing==2.3.0
+pyrsistent==0.15.3
 python-dateutil==2.7.5
 pytz==2018.7
 PyYAML==3.13
